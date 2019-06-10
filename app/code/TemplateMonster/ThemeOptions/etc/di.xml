@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="TemplateMonster\ThemeOptions\Controller\Adminhtml\Settings\Export">
+        <arguments>
+            <argument name="writer" xsi:type="object">Magento\ImportExport\Model\Export\Adapter\Csv</argument>
+        </arguments>
+    </type>
+    <type name="TemplateMonster\ThemeOptions\Block\Adminhtml\System\Edit\Plugin">
+        <arguments>
+            <argument name="sections" xsi:type="array">
+                <item name="0" xsi:type="string">theme_options</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Config\Block\System\Config\Edit">
+        <plugin name="addResetButton" type="TemplateMonster\ThemeOptions\Block\Adminhtml\System\Edit\Plugin" sortOrder="100" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Upsell">
+        <plugin name="itemsLimit" type="TemplateMonster\ThemeOptions\Block\Product\ProductList\UpsellPlugin" sortOrder="200" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="toolbarLimiter" type="TemplateMonster\ThemeOptions\Block\Product\ProductList\ToolbarPlugin" sortOrder="300" />
+    </type>
+    <preference for="Magento\Framework\Config\View" type="TemplateMonster\ThemeOptions\Block\Config\View" />
+</config>

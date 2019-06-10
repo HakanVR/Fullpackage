@@ -1,0 +1,10 @@
+{
+  "name" : "templatemonster/featured-product",
+  "description": "Featured Product",
+  "type": "magento2-module",
+  "version": "1.0.2",
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {"TemplateMonster\\FeaturedProduct\\":""}
+  }
+}

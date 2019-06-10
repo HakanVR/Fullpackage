@@ -1,0 +1,177 @@
+/*
+* @section      Custom pages
+* @description  This section holds specific style for Custom pages
+*/
+
+.cms-page-view {
+  @for $i from 1 through 6 {
+    h#{$i},
+    heading-#{$i} {
+      text-transform: uppercase;
+    }
+  }
+}
+
+dl.custom-page {
+  dd {
+    font-style: normal;
+    margin-bottom: 30px;
+  }
+
+}
+
+.search-term-popular {
+  ul.search-terms {
+    @include clearfix;
+    li {
+      float: left;
+      margin-right: 15px;
+      font-size: 24px;
+    }
+  }
+}
+
+//About us
+.custom-page {
+  .section-title {
+    margin: 60px 0 35px;
+    border-top: 1px solid #ebecee;
+    padding-top: 60px;
+  }
+}
+
+.skills {
+  color: $primary;
+  .value {
+    font-size: 56px;
+    line-height: 1.519em;
+    font-weight: 700;
+  }
+  .term {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.big-circle-icon {
+  .cms-about-us & {
+    @media (max-width: 767px) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.team > div[class*='col-'] {
+  @media (max-width: 767px) {
+    margin-bottom: 2rem;
+  }
+}
+.column.main {
+  .message > div::after {
+    content:'';
+  }
+}
+.team {
+  figure {
+    margin-bottom: 15px;
+  }
+  .heading-4 {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+.cms-customer-service {
+  .terms-conditions {
+    h4 {
+      &.small-icon {
+        margin-bottom: 15px;
+        padding-top: 10px;
+        &:before {
+          padding-right: 15px;
+          vertical-align: bottom;
+        }
+      }
+    }
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .section-title {
+    margin: 60px 0 35px;
+  }
+}
+
+//404 page
+.not-found-page {
+  *[class*='heading-'] {
+    text-transform: uppercase;
+  }
+  .disc li,
+  dd {
+    font-style: normal;
+  }
+}
+
+//Create account page
+.customer-account-create {
+  .field .checkbox {
+    margin-top: .5rem;
+  }
+}
+.product-options-wrapper {
+  .field {
+    margin-bottom: 1.3rem;
+  }
+}
+/*
+* @section      Testimonials
+* @description  This section holds specific style for Testimonials
+*/
+
+.testimonials {
+  padding-bottom: 2em;
+  blockquote {
+    padding: 10px 20px;
+    cite {
+      display: block;
+      text-align: center;
+      margin: 0 auto 0.5em;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $primary;
+    }
+    q {
+      display: block;
+      padding: 0 5%;
+    }
+  }
+  &.owl-testimonials {
+    .owl-controls {
+      top: auto;
+      bottom: -15px;
+      right: 50%;
+      margin-right: -55px;
+    }
+    .owl-prev,
+    .owl-next {
+      padding: 0 7px;
+      &:before {
+        font-size: 2.5em;
+        transition: .3s ease;
+      }
+      &:hover {
+        &:before {
+        }
+      }
+    }
+    .owl-prev {
+      @include font-icon('\e408');
+    }
+    .owl-next {
+      @include font-icon('\e409');
+    }
+  }
+}
+input[type="text"], .input-text, input[type="email"], input[type="password"], input[type="number"], select, textarea {
+  font-style: normal !important;
+}

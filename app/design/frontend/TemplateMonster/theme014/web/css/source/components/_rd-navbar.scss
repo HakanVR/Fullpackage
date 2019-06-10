@@ -1,0 +1,152 @@
+/*
+* @subsection   RD Navbar
+*
+* @description  Describes style declarations for RD Navbar extension
+*/
+@import "../_variables.scss";
+@import "../_mixins.scss";
+
+$rd-navbar-default-color: #333333;
+$rd-navbar-contrast-color: #333333;
+$rd-navbar-accent-color: $white;
+$rd-navbar-accent-color-2: rgb(46, 204, 113);
+$rd-navbar-hover-color: $primary;
+
+$rd-navbar-submenu-bg: #ffffff;
+
+$rd-navbar-shadow-ambient: 0 0 2px 0 rgba(0, 0, 0, .25);
+$rd-navbar-shadow-medium: 0 3px 5px 0 rgba(0, 0, 0, .25);
+$rd-navbar-shadow-large: 0 5px 8px 0 rgba(0, 0, 0, .25);
+
+%rd-navbar-transition {
+  transition: .3s all cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+%rd-navbar-hidden {
+  display: none;
+}
+
+%rd-navbar-visible {
+  display: block;
+}
+
+.rd-navbar--no-transition {
+  &, * {
+    transition: none !important;
+  }
+}
+
+.rd-navbar-wrap {
+  @extend %rd-navbar-transition;
+}
+
+.rd-navbar, .rd-navbar.rd-navbar--is-clone {
+  @extend %rd-navbar-hidden;
+
+}
+
+.rd-navbar--is-clone {
+  .rd-navbar-nav > li > a::after {
+    display: none;
+  }
+}
+
+.rd-navbar-fixed,
+.rd-navbar-static,
+.rd-navbar-fullwidth,
+.rd-navbar-sidebar {
+  @extend %rd-navbar-visible;
+
+  .block {
+    margin: 0;
+  }
+}
+
+.rd-navbar-outer {
+  color: $rd-navbar-default-color;
+  background: $rd-navbar-contrast-color;
+}
+
+.rd-navbar-static {
+  background: $content-bg;
+  position: relative;
+  .rd-navbar-nav-wrap,
+  .rd-navbar-search-wrap {
+    vertical-align: middle;
+  }
+
+  &.rd-navbar--is-clone {
+    @extend %rd-navbar-transition;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    @include transform(translateY(-105%));
+    z-index: 20;
+
+    .rd-navbar-panel {
+      display: none;
+    }
+
+    &.rd-navbar--is-stuck {
+      @include transform(translateY(0));
+    }
+  }
+
+  &.rd-navbar--is-stuck {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.18);
+    background: $theme-module-bg;
+    padding: 22px 0 11px;
+    .rd-navbar-panel {
+      display: none;
+    }
+    .rd-navbar-nav > li > a::after {
+      display: block;
+    }
+  }
+
+  &.rd-navbar--is-stuck {
+    .page-header__panel,
+    .page-header__content {
+      display: none;
+    }
+  }
+
+  .rd-navbar-nav {
+    li {
+      &.rd-navbar--has-dropdown > a,
+      &.rd-navbar--has-megamenu > a {
+        span {
+          @include font-icon('\e5cf');
+          &:before {
+            float: right;
+            line-height: 1;
+            margin-top: 4px;
+          }
+        }
+        .rd-navbar-submenu-toggle {
+          display: none !important;
+        }
+
+      }
+      &.rd-navbar--has-megamenu > a {
+        position: relative;
+      }
+
+    }
+  }
+}
+
+@import "rd-navbar_components/_rd-navbar-toggles.scss";
+@import "rd-navbar_components/_rd-navbar-nav.scss";
+@import "rd-navbar_components/_rd-navbar-brand.scss";
+@import "rd-navbar_components/_rd-navbar-cart.scss";
+@import "rd-navbar_components/_rd-navbar-panel.scss";
+@import "rd-navbar_components/_rd-navbar-search.scss";
+@import "rd-navbar_components/_rd-navbar-collapse.scss";

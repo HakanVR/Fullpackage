@@ -1,0 +1,240 @@
+//
+//  Filters
+//  __________________________________________________
+
+.filter-wrapper {
+  @include make-flex;
+  @media (min-width: $screen-lg-min - 1) {
+    border-bottom: 1px solid $theme-line-1;
+    padding-bottom: 15px;
+  }
+  .filter-title {
+    @include flex-basis(9%);
+
+    strong {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: $default-font-family;
+    }
+  }
+  .filter-content {
+    @include flex-basis(91%);
+  }
+  .filter-subtitle {
+    display: none;
+  }
+  .filter-options {
+    @include make-flex;
+    @include flex-wrap(wrap);
+    .filter-options-title {
+      position: relative;
+      margin: 0 10px 10px;
+      padding: 1px 10px 4px;
+      min-width: 150px;
+      &:after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top:0;
+        border-left: 1px solid $theme-line-1;
+        height: 100%;
+      }
+      &:before {
+        @include font-icon('\e5cf');
+        position: relative;
+        left: 0;
+        top: 0;
+        right: 0;
+        float: right;
+        margin-top: 4px;
+      }
+
+      &:hover{
+        background: $theme-module-bg;
+      }
+    }
+  }
+  .filter-options-item {
+    position: relative;
+    z-index: 1;
+    &.active,
+    &:hover {
+      z-index: 2;
+      .filter-options-title {
+        background: $theme-module-bg;
+      }
+    }
+
+  }
+
+  .filter-options-content {
+    position: absolute;
+    background: $theme-module-bg;
+    left: 10px;
+    right: 10px;
+    top:25px;
+    display: none;
+    a {
+      display: block;
+      color: $default;
+      padding: 4px 13px 6px;
+      &:hover {
+        background: $theme-module-bg-active;
+      }
+    }
+    .count {
+      font-size: 11px;
+      color: $secondary-1;
+      opacity: 0.4;
+      display: inline-block;
+      vertical-align: 0;
+      &:before {
+        content: '(';
+      }
+      &:after {
+        content: ')';
+      }
+
+      .filter-count-label {
+        display: none;
+      }
+    }
+    .price {
+      font-weight: normal;
+      color: $default;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+  }
+  .block-subtitle.filter-current-subtitle {
+    display: none;
+  }
+  .filter-actions {
+    margin: 8px 0 0;
+    color: $primary;
+    text-decoration: underline;
+    &:hover {
+      color: $secondary-1;
+    }
+    .filter-clear {
+      float: none;
+      color: $primary;
+      &:hover {
+        color: $link-regular;
+      }
+    }
+  }
+  .swatch-attribute-options {
+    padding: 8px 0 2px 8px;
+  }
+
+    //Current filters
+  .filter-current {
+    border-bottom: 2px solid $theme-line-1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    .items {
+      @include make-flex;
+    }
+    .item {
+      position: relative;
+      margin: 0 10px;
+      padding: 1px 10px 4px;
+      min-width: 150px;
+      background: $secondary-1;
+      &:after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top:0;
+        border-left: 1px solid $theme-line-1;
+        height: 100%;
+      }
+
+    }
+    .remove {
+      @include font-icon("\e5cd");
+      color: $default;
+      margin-left: 8px;
+      display: inline-block;
+      &:before {
+        float: right;
+        margin-top: 5px;
+      }
+      &:hover {
+        color: $primary;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+//Filter actions
+.filter-actions {
+  margin-bottom: $indent-small;
+}
+
+//Filter options
+#layered-filter-block aside.modal-slide {
+  background-color: transparent;
+}
+
+
+@media (max-width: $screen-sm-min - 1) {
+  #layered-filter-block {
+    margin: 0;
+  }
+
+}
+@media (max-width: $screen-md-min - 1) {
+  .filter-wrapper .filter-current {
+    .item {
+      margin: 0;
+      min-width: 225px;
+      &:after {
+        display: none;
+      }
+    }
+    .remove {
+      float: right;
+    }
+  }
+  .filter-wrapper .filter-options .filter-options-title {
+    margin: 0 0 15px;
+    min-width: 225px;
+    &::after {
+      display: none;
+    }
+  }
+  .filter-wrapper .filter-options-content {
+    left: 0;
+    right: 0;
+    top:0;
+    position: relative;
+    margin-top: -13px;
+    margin-bottom: 12px !important;
+  }
+  .filter-wrapper .modal-header .action-close {
+    display: block;
+    span {
+      display: none;
+    }
+  }
+  .filter-wrapper .modal-slide .modal-inner-wrap {
+    padding-top: 30px;
+  }
+  .tollbar-bottom .filter-toggle {
+    display: none !important;
+  }
+
+  .toolbar-container .filter-toggle {
+    padding: 5px 50px;
+    @media (max-width: 767px) {
+      padding:5px 30px;
+      margin-top: 10px;
+    }
+  }
+
+}

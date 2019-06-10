@@ -1,0 +1,70 @@
+@import 'product/_list.scss';
+@import 'product/_toolbar.scss';
+@import 'product/_view.scss';
+@import 'product/compare/_list.scss';
+@import 'product/compare/_block.scss';
+@import 'product/list/_grid.scss';
+@import 'product/list/_list.scss';
+@import 'product/view/_fotorama.scss';
+@import 'product/view/block/_related.scss';
+@import 'product/view/block/_upsell.scss';
+@import 'product/view/type/_downloadable.scss';
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+.collapsible-block {
+  position: relative;
+
+  .opener {
+    display: block;
+    @extend .heading-3;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      @extend .medium;
+    }
+  }
+}
+
+//
+//  Icons
+//  ---------------------------------------------
+
+.towishlist,
+.tocompare {
+  position: relative;
+  span {
+    display: none;
+  }
+}
+
+.product-social-links .mailto {
+  padding: 0 $indent-small/2;
+  @include font-icon('\e0be');
+}
+
+.towishlist {
+  @include font-icon('\e87e');
+  &:before {
+    display: inline-block;
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+.tocompare {
+  &:before {
+    font-family: $fa;
+    content: '\f24e';
+    font-size: 22px;
+    line-height: 28px;
+  }
+}

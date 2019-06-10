@@ -1,0 +1,86 @@
+@import "../../../../../../web/css/source/components/_modals.scss";
+
+//
+//  Local Variables
+//  _____________________________________________
+
+//
+//  Common
+//  _____________________________________________
+
+.opc-progress-bar {
+  margin-bottom: $indent-base;
+  counter-reset:li; /* Initiate a counter */
+  @include make-flex;
+  @include flex-wrap(wrap);
+  width: 65%;
+  .opc-progress-bar-item {
+    border: 2px solid $theme-line-1;
+    font-weight: bold;
+    color: $secondary-1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 14px 20px;
+    width: 45%;
+    position: relative;
+    height: 50px;
+    margin-right: 5%;
+    span:before {
+      content: '';
+      position: absolute;
+      top:-2px;
+      right: -52px;
+      border: 25px solid transparent;
+      border-left: 25px solid $theme-line-1;
+    }
+
+    &::before {
+      content:'0'counter(li); /* Use the counter as content */
+      counter-increment:li; /* Increment the counter by 1 */
+      padding-right: 5px;
+      color: $primary;
+    }
+    &._active {
+      background: $link-regular;
+      border-color: $link-regular;
+      color: $white;
+      &:after {
+        display: none;
+      }
+      span:before {
+        border-left-color: $link-regular;
+      }
+
+    }
+
+    &._complete {
+      &::before {
+
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top:-1px;
+      right: -47px;
+      border: 24px solid transparent;
+      border-left: 24px solid $white;
+
+    }
+
+    @media (max-width: $screen-md-min) {
+      margin: 0 0 10px;
+      width: 85%;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+  }
+  @media (max-width: $screen-sm-min) {
+    width: 100%;
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________

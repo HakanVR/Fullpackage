@@ -1,0 +1,74 @@
+//
+//  Generic Grid/List Item
+//  ---------------------------------------------
+
+.products .product-item {
+
+  //Details
+  .product-item-name {
+    display: block;
+  }
+
+  //Reviews
+  .product-reviews-summary {
+    margin-bottom: 20px;
+  }
+  .reviews-actions {
+    .action {
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 5px;
+    }
+  }
+
+  //Swatches
+
+  .swatch-attribute-options {
+    margin-top: 10px;
+  }
+
+  //Price
+  .price-final_price {
+    font-size: 30px;
+    line-height: 30px;
+    margin-right:4px;
+    @media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+      font-size: 18px;
+    }
+  }
+  .old-price {
+    .price-final_price {
+      font-size: 14px;
+    }
+  }
+
+  //Actions
+  .product-item-actions {
+    .primary {
+      &:before {
+        font-family: $fl-line-icon;
+        content: "\e061";
+        vertical-align: middle;
+      }
+    }
+  }
+
+  // label new and sale
+  .product-item-photo {
+    position: relative;
+    display: block;
+  }
+  .label-product {
+    span {
+      font-style: italic;
+      color: #fff;
+      background: $secondary-1;
+      padding: 0 6px 1px;
+      display: inline-block;
+      &.sale {
+        background: $primary;
+      }
+    }
+  }
+
+}

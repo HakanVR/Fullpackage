@@ -1,0 +1,70 @@
+@import "../../../../../../web/css/source/components/_modals.scss";
+
+//
+//  Local Variables
+//  _____________________________________________
+
+//
+//  Common
+//  _____________________________________________
+
+.checkout-container{
+    .authentication-wrapper{
+        position: absolute;
+        right: 0;
+        top: -55px;
+        .action-auth-toggle {
+            color: $primary;
+            text-decoration: underline;
+            &:hover {
+                color: $link-regular;
+            }
+        }
+    }
+    .authentication-dropdown {
+        .actions-toolbar {
+            display: block;
+            margin: 0;
+            text-align: center;
+        }
+        .primary .action {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .secondary .action {
+            width: 100%;
+        }
+        .input-text {
+            height: 50px;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@media (min-width: $screen-sm-min + 1) {
+    .checkout-container{
+        .authentication-wrapper{
+            .modal-custom-overlay{
+                background: none;
+            }
+        }
+        .authentication-dropdown {
+            @include abs-modal();
+            @include abs-modal-popup();
+            width: 270px;
+            right: 0;
+            top: 50px;
+            left: auto;
+            position: absolute;
+            overflow: visible;
+            .modal-inner-wrap{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}
+

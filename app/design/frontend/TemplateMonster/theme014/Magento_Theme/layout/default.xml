@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <move element="minicart" destination="header.panel.grid-container" after="header.switchers"/>
+        <move element="logo" destination="header-wrapper.grid-container" after="header_info"/>
+        <move element="top.search" destination="rd.navbar-wrap" after="minicart"/>
+        <referenceBlock name="navigation.sections" remove="true" />
+        <referenceContainer name="header-wrapper.grid-container">
+
+            <block type="cms/block" class="Magento\Cms\Block\Block" name="header_icon">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_icon</argument>
+                </arguments>
+            </block>
+            <block type="cms/block" class="Magento\Cms\Block\Block" name="header_info" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_info</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <move element="footer_col_content_1" destination="footer.grid-container" after="footer_logo" />
+        <move element="footer_col_2" destination="footer.grid-container" after="footer_col_content_1"/>
+        <move element="form.subscribe" destination="footer" before="-"/>
+        <referenceContainer name="footer.grid-row" remove="true" />
+        <referenceContainer name="footer.grid-container">
+            <block type="cms/block" class="Magento\Cms\Block\Block" name="footer_logo" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_logo</argument>
+                </arguments>
+            </block>
+            <block type="cms/block" class="Magento\Cms\Block\Block" name="list_icon">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">list_icon</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

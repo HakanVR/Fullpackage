@@ -1,0 +1,58 @@
+//
+//  Order
+//  ---------------------------------------------
+
+.page-title-wrapper {
+  .order-status {
+    padding-bottom: 10px;
+    font-size: 1.2em;
+    display: inline-block;
+  }
+  .order-date {
+    font-style: italic;
+    padding-bottom: 10px;
+  }
+}
+
+.table-order-items {
+  caption {
+    display: none;
+  }
+}
+
+.order-links {
+  font-size: 18px;
+  strong {
+    font-weight: normal;
+  }
+}
+
+.order-details-items {
+  .order-title {
+    display: none;
+  }
+}
+
+.block-order-details-view {
+  padding: 20px 0 0;
+  overflow: hidden;
+  .block-content {
+    margin: 0 -1%;
+    .box {
+      display: inline-block;
+      min-width: 48%;
+      float: left;
+      padding-right: 15px;
+      border-top: solid 1px $table-border;
+      margin: 1%;
+      &.box-order-billing-address {
+        clear: both;
+      }
+
+      @media (max-width: $screen-sm-min - 1) {
+        min-width: 100%;
+      }
+    }
+
+  }
+}

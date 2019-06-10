@@ -1,0 +1,440 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="templatemonster">
+            <label>TemplateMonster</label>
+        </tab>
+        <section id="theme_options" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Theme Options</label>
+            <tab>templatemonster</tab>
+            <resource>TemplateMonster_ThemeOptions::theme_options_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="import_file" translate="label comment" type="file" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import File</label>
+                    <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Field\Hidden</frontend_model>
+                    <comment>Select file with settings and press Import button from toolbar to perform import.</comment>
+                </field>
+                <!-- <field id="theme_color" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Theme color</label>
+                    <comment>Theme color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field> -->
+                <field id="body_background_color" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Body background color</label>
+                    <comment>Body background color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field>
+
+                <field id="body_background_image_active" translate="label comment" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Body background image</label>
+                    <comment>Enable/Disable body background image</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="body_background_image" translate="label comment" type="image" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background image</label>
+                    <comment>Body background image file. Allowed file types: ICO, PNG, GIF, JPG, JPEG, APNG, SVG. Not all browsers support all these formats!</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">theme_options</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">theme_options</upload_dir>
+                    <depends>
+                        <field id="body_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="body_background_image_position" translate="label comment" type="select" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background position</label>
+                    <comment>Body background image position</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Position</source_model>
+                    <depends>
+                        <field id="body_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="body_background_image_repeat" translate="label comment" type="select" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background repeat</label>
+                    <comment>Body background image repeat</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Repeat</source_model>
+                    <depends>
+                        <field id="body_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="body_background_image_size" translate="label comment" type="select" sortOrder="33" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background size</label>
+                    <comment>Body background image size</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Size</source_model>
+                    <depends>
+                        <field id="body_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="body_background_image_attachment" translate="label comment" type="select" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background attachment</label>
+                    <comment>Body background image attachment</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Attachment</source_model>
+                    <depends>
+                        <field id="body_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="header_background_color" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header background color</label>
+                    <comment>Header background color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field>
+                <field id="footer_background_color" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer background color</label>
+                    <comment>Footer background color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field>
+                <field id="footer_background_image_active" translate="label comment" type="select" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer background image</label>
+                    <comment>Enable/Disable footer background image</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="footer_background_image" translate="label comment" type="image" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background image</label>
+                    <comment>Footer background image file. Allowed file types: ICO, PNG, GIF, JPG, JPEG, APNG, SVG. Not all browsers support all these formats!</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">theme_options</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">theme_options</upload_dir>
+                    <depends>
+                        <field id="footer_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="footer_background_image_position" translate="label comment" type="select" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background position</label>
+                    <comment>Footer background image position</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Position</source_model>
+                    <depends>
+                        <field id="footer_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="footer_background_image_repeat" translate="label comment" type="select" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background repeat</label>
+                    <comment>Footer background image repeat</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Repeat</source_model>
+                    <depends>
+                        <field id="footer_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="footer_background_image_size" translate="label comment" type="select" sortOrder="63" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background size</label>
+                    <comment>Footer background image size</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Size</source_model>
+                    <depends>
+                        <field id="footer_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="footer_background_image_attachment" translate="label comment" type="select" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background attachment</label>
+                    <comment>Footer background image attachment</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Attachment</source_model>
+                    <depends>
+                        <field id="footer_background_image_active">1</field>
+                    </depends>
+                </field>
+                <!-- <field id="show_product_label" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show product label</label>
+                    <comment>Turn on to show product label.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field> -->
+            </group>
+            <group id="main" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Main Theme Settings</label>
+                <field id="top_head_background_color" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top head background color</label>
+                    <comment>Top head background color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field>
+                <field id="top_head_background_image_active" translate="label comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top head background image</label>
+                    <comment>Enable/Disable Top Head background image</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="top_head_background_image" translate="label comment" type="image" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background image</label>
+                    <comment>Top head background image file. Allowed file types: ICO, PNG, GIF, JPG, JPEG, APNG, SVG. Not all browsers support all these formats!</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">theme_options</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">theme_options</upload_dir>
+                    <depends>
+                        <field id="top_head_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="top_head_background_image_position" translate="label comment" type="select" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background position</label>
+                    <comment>Top head background image position</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Position</source_model>
+                    <depends>
+                        <field id="top_head_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="top_head_background_image_repeat" translate="label comment" type="select" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background repeat</label>
+                    <comment>Top head background image repeat</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Repeat</source_model>
+                    <depends>
+                        <field id="top_head_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="top_head_background_image_size" translate="label comment" type="select" sortOrder="23" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background size</label>
+                    <comment>Top head background image size</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Size</source_model>
+                    <depends>
+                        <field id="top_head_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="top_head_background_image_attachment" translate="label comment" type="select" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background attachment</label>
+                    <comment>Top head background image attachment</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Attachment</source_model>
+                    <depends>
+                        <field id="top_head_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="block_title_background_color" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block title background color</label>
+                    <comment>Block title background color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field>
+                <field id="block_title_background_image_active" translate="label comment" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block title background image</label>
+                    <comment>Enable/Disable Block title background image</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="block_title_background_image" translate="label comment" type="image" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background image</label>
+                    <comment>Block title background image file. Allowed file types: ICO, PNG, GIF, JPG, JPEG, APNG, SVG. Not all browsers support all these formats!</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">theme_options</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">theme_options</upload_dir>
+                    <depends>
+                        <field id="block_title_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="block_title_background_image_position" translate="label comment" type="select" sortOrder="41" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background position</label>
+                    <comment>Block title background image position</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Position</source_model>
+                    <depends>
+                        <field id="block_title_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="block_title_background_image_repeat" translate="label comment" type="select" sortOrder="42" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background repeat</label>
+                    <comment>Block title background image repeat</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Repeat</source_model>
+                    <depends>
+                        <field id="block_title_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="block_title_background_image_size" translate="label comment" type="select" sortOrder="43" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background size</label>
+                    <comment>Block title background image size</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Size</source_model>
+                    <depends>
+                        <field id="block_title_background_image_active">1</field>
+                    </depends>
+                </field>
+                <field id="block_title_background_image_attachment" translate="label comment" type="select" sortOrder="44" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background attachment</label>
+                    <comment>Block title background image attachment</comment>
+                    <source_model>TemplateMonster\ThemeOptions\Model\Config\Source\Attachment</source_model>
+                    <depends>
+                        <field id="block_title_background_image_active">1</field>
+                    </depends>
+                </field>
+                <!--<field id="social_links_background_image" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Social links background image</label>
+                    <comment>Social links background image file. Allowed file types: ICO, PNG, GIF, JPG, JPEG, APNG, SVG. Not all browsers support all these formats!</comment>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <base_url type="media" scope_info="1">theme_options</base_url>
+                    <upload_dir config="system/filesystem/media" scope_info="1">theme_options</upload_dir>
+                </field>
+                <field id="social_links_background_color" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Social links background color</label>
+                    <comment>Social links background color in hex format.</comment>
+                    <frontend_model>TemplateMonster\ThemeOptions\Block\Adminhtml\System\Config\Field\ColorPicker</frontend_model>
+                </field> -->
+            </group>
+            <group id="desktop" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Desktop</label>
+                <group id="grid" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Grid Setting</label>
+                    <field id="items_per_row" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Items per row</label>
+                        <comment>Number of items per row.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                    <field id="product_image_height" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Product image height</label>
+                        <comment>Product image height in pixels.</comment>
+                    </field>
+                    <field id="product_image_width" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Product image width</label>
+                        <comment>Product image width in pixels.</comment>
+                    </field>
+                </group>
+                <group id="list" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product List Setting</label>
+                    <field id="product_image_height" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Product image height</label>
+                        <comment>Product image height in pixels.</comment>
+                    </field>
+                    <field id="product_image_width" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Product image width</label>
+                        <comment>Product image width in pixels.</comment>
+                    </field>
+                    <field id="short_description_length" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Short description length</label>
+                        <comment>Product list short description length.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                </group>
+            </group>
+            <group id="tablet" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Tablet</label>
+                <group id="grid" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Grid Setting</label>
+                    <field id="items_per_row_portrait" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Items per row (portrait)</label>
+                        <comment>Number of items per row in portrait mode.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                    <field id="items_per_row_landscape" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Items per row (landscape)</label>
+                        <comment>Number of items per row in landscape mode.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                    <field id="products_per_page" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Products per page</label>
+                        <comment>Number of products per page.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                </group>
+                <group id="list" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product List Setting</label>
+                    <field id="short_description_length" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Short description length</label>
+                        <comment>Product list short description length.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                </group>
+            </group>
+            <group id="mobile" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mobile</label>
+                <group id="grid" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Grid Setting</label>
+                    <field id="items_per_row_portrait" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Items per row (portrait)</label>
+                        <comment>Number of items per row in portrait mode.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                    <field id="items_per_row_landscape" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Items per row (landscape)</label>
+                        <comment>Number of items per row in landscape mode.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                    <field id="products_per_page" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Products per page</label>
+                        <comment>Number of products per page.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                </group>
+                <group id="list" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product List Setting</label>
+                    <field id="short_description_length" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Short description_length</label>
+                        <comment>Product list short description length.</comment>
+                        <validate>validate-greater-than-zero</validate>
+                    </field>
+                </group>
+            </group>
+            <group id="product_details" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product detail settings</label>
+                <field id="product_image_width" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product gallery width</label>
+                    <comment>Product image gallery width in pixels.</comment>
+                </field>
+                <field id="product_image_height" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product gallery height</label>
+                    <comment>Product image gallery height in pixels.</comment>
+                </field>
+                <field id="show_upsell" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show upsell products</label>
+                    <comment>Turn on to show upsell products.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="upsell_limit" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upsell products count</label>
+                    <comment>Number of upsell products.</comment>
+                    <validate>validate-greater-than-zero</validate>
+                </field>
+                <field id="upsell_image_width" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upsell image width</label>
+                    <comment>Upsell image width in pixels.</comment>
+                </field>
+                <field id="upsell_image_height" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upsell image height</label>
+                    <comment>Upsell image height in pixels.</comment>
+                </field>
+            </group>
+            <group id="social_links" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Links</label>
+                <field id="header_social_links" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Header social links</label>
+                    <comment>Turn on to show social links in header.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="footer_social_links" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer social links</label>
+                    <comment>Turn on to show social links in footer.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="rss_link" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>RSS link</label>
+                    <comment>RSS link url.</comment>
+                </field>
+                <field id="facebook_link" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook link</label>
+                    <comment>Facebook link url.</comment>
+                </field>
+                <field id="twitter_link" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twitter link</label>
+                    <comment>Twitter link url.</comment>
+                </field>
+                <field id="google_link" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google link</label>
+                    <comment>Google link url.</comment>
+                </field>
+                <field id="instagram_link" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Instagram link</label>
+                    <comment>Instagram link url.</comment>
+                </field>
+                <field id="linkedin_link" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>LinkedIn link</label>
+                    <comment>LinkedIn link url.</comment>
+                </field>
+                <field id="dribble_link" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dribble link</label>
+                    <comment>Dribble link url.</comment>
+                </field>
+                <field id="youtube_link" translate="label comment" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Youtube link</label>
+                    <comment>Youtube link url.</comment>
+                </field>
+            </group>
+            <group id="swatch_visibility" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Swatch Setting</label>
+                <field id="grid_swatch_visibility" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable swatch grid</label>
+                    <comment>Turn on to show swatch grid.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="list_swatch_visibility" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable swatch list</label>
+                    <comment>Turn on to show swatch list.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

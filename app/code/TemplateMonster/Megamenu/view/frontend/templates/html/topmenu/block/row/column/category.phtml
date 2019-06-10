@@ -1,0 +1,30 @@
+<?php
+    $category = $this->getCategory();
+    $subCategories = $category->getChildren();
+?>
+<ul class="mm-submenu level1">
+    <li>
+        <?php if ($image = $this->getImage($category)) : ?>
+            <span class="mm-image"><img src="<?php echo $image; ?>" alt=""></span>
+        <?php endif; ?>
+        <a href="<?php echo $category->getUrl(); ?>">
+            <?php if ($label = $category->getMmLabel()): ?>
+                <span class="mm-label"><?php echo $label; ?></span>
+            <?php endif; ?>
+            <?php echo $category->getName() ?>
+        </a>
+        <ul class="mm-submenu level2">
+            <?php foreach ($subCategories as $subCategory):  ?>
+            <li>
+                <?php if ($label = $subCategory->getMmLabel()): ?>
+                    <span class="mm-label"><?php echo $label; ?></span>
+                <?php endif; ?>
+                <?php if ($image = $this->getImage($subCategory)) : ?>
+                    <span class="mm-image"><img src="<?php echo $image; ?>" alt=""></span>
+                <?php endif; ?>
+                <a href="<?php echo $subCategory->getUrl(); ?>"><?php echo $subCategory->getName(); ?></a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </li>
+</ul>

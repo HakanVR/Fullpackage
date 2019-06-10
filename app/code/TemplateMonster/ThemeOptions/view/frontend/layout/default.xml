@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="TemplateMonster\ThemeOptions\Block\View\Styles" template="dynamic-styles.phtml" name="theme.options.styles" />
+        </referenceContainer>
+        <referenceContainer name="header-wrapper">
+            <block class="TemplateMonster\ThemeOptions\Block\SocialLinks" name="theme.options.social.links.header" after="top.search">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">header</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="TemplateMonster\ThemeOptions\Block\SocialLinks" name="theme.options.social.links.footer" after="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">footer</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

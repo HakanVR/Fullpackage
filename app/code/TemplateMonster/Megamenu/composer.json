@@ -1,0 +1,9 @@
+{
+  "name": "templatemonster/module-megamenu",
+  "type": "magento2-module",
+  "version": "1.0.6",
+  "autoload": {
+    "psr-4": {"TemplateMonster\\Megamenu\\":""},
+    "files": [ "registration.php" ]
+  }
+}

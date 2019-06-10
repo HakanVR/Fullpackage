@@ -1,0 +1,43 @@
+
+body > .loading-mask {
+  background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  .loader {
+    p {
+      display: none;
+    }
+    > img {
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 100;
+      width: auto;
+    }
+  }
+}
+.opc-wrapper {
+  .loader {
+    display: none !important;
+  }
+}
+//
+//  Page components
+//  ---------------------------------------------
+
+@import 'checkout/_authentication.scss';
+@import 'checkout/_progress-bar.scss';
+@import 'checkout/_estimated-total.scss';
+@import 'checkout/_checkout.scss';
+@import 'checkout/_sidebar.scss';
+@import 'checkout/_tooltip.scss';
+@import 'checkout/_order-summary.scss';
+@import 'checkout/_shipping.scss';

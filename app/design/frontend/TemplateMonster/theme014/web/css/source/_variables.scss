@@ -1,0 +1,110 @@
+//
+// Grid system
+// --------------------------------------------------
+
+$column-count: 12;
+$column-width: 70px;
+$gutter-width: 30px;
+$column-width-xl: 89px;
+$gutter-width-xl: 60px;
+
+$row-ws: 0;
+
+$container-xs: 300px;
+$container-sm: 720px + $gutter-width;
+$container-md: 940px + $gutter-width;
+$container-lg: $column-count*$column-width + $gutter-width*($column-count);
+$container-xl: $column-count*$column-width-xl + $gutter-width-xl*($column-count);
+
+
+// Layouts
+$layout-boxed-width: 1920px;
+
+// Resolutions
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1728px;
+
+// Fonts
+$default-font-family: 'Lato', sans-serif;
+$default-font-weight: 500;
+$default-font-size: 14px;
+$default-line-height: 2.428em;
+
+$extra-font-family:'Playfair Display', serif;
+
+
+// Icons
+$default-icon-family: 'Material Icons';
+$fa: 'FontAwesome';
+$fl-line-icon: 'fl-line-icon-set';
+
+// Colors
+$white: #FFF;
+$black: #000;
+$red: #d73105;
+$default: #999999;
+
+
+$bg-light: #f0f0f0;
+
+$primary: #ffc107;
+$secondary-1: #333333;
+$secondary-2: #dedfe1;
+$contrast: $white;
+
+$table-border: #dadada;
+
+$header-color: $contrast;
+$header-bg: #f0f0f0;
+
+$content-color: $default;
+$content-bg: #ffffff;
+$content-bg-popup: #fff;
+$content-shadow-bg: 0 8px 50px rgba(0,0,0,0.18);
+$theme-module-bg: #f7f7f8;
+$theme-module-bg-active: #ebecee;
+
+
+$footer-color: $content-color;
+$footer-bg: $secondary-1;
+
+$modal-popup__box-shadow: (transparentize($black, .8));
+
+$theme-line-1: #ebecee;
+
+//Indents
+$indent-base: 2rem;
+$indent-large:  $indent-base * 2;
+$indent-small:  $indent-base / 2;
+
+//Links
+$link-regular:  #333333;
+$link-hover:    #ffc107;
+$link-active:   #191919;
+$link-alt:      $default;
+
+
+//
+//  Form Variables
+//  ---------------------------------------------
+
+//Inputs
+$input-height:          3.57rem;
+$input-padding-hor:     1rem;
+$input-padding-vert:    .4rem;
+
+$input-font-size:       $default-font-size;
+$input-line-height:     $default-line-height;
+
+$input-bg-color:        #f5f5f7;
+
+//Buttons
+$button-padding-vert:   .38rem;
+$button-padding-hor:    1rem;
+
+$button-bg-color:       #333;
+$button-border:         #333;
+

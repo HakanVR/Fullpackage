@@ -1,0 +1,47 @@
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+
+// import
+@import '_variables.scss';
+@import '_mixins.scss';
+
+/* Main Styles */
+
+.block.widget.featured {
+  .products-grid .product-items{
+    .product-item-photo {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .block-content.custom-columns .products-grid {
+    margin-left: -30px;
+
+    .product-item {
+      margin-left: 0;
+      margin-right: 0;
+      padding:0 0 0 30px;
+    }
+  }
+}
+
+
+// Carousel
+.block.featured {
+
+  .block-content .products-grid .owl-carousel{
+    margin:0 0 0 -30px;
+
+    .owl-wrapper-outer {
+      padding-top: 15px;
+      padding-right: 15px;
+
+      .product-item {
+        padding-left: 30px;
+      }
+    }
+  }
+}

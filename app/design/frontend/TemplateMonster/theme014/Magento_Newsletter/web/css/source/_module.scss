@@ -1,0 +1,72 @@
+.bg-newsletter-block {
+  background-color: $primary;
+  position: relative;
+
+  .control {
+    position: relative;
+
+  }
+  div.mage-error {
+    position: static;
+  }
+}
+
+.newsletter-block-brd {
+  padding: 75px 20px 63px;
+  border-bottom: 3px solid #ebecee;
+}
+
+.newsletter {
+  max-width: 570px;
+  margin: 0 auto;
+  text-align: center;
+  @include clearfix;
+  .newsletter {
+    margin-bottom: 20px;
+  }
+  .title {
+    @extend .heading-3;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 0.3em;
+    color: $white;
+    span {
+      font-weight: 400;
+    }
+  }
+  .field label {
+    font-size: 16px;
+    text-transform: none;
+    font-weight: normal;
+    color: $white;
+    letter-spacing: 0;
+    margin: 0 0 15px;
+    padding: 0;
+  }
+  #newsletter {
+    height: 50px;
+    background-color: $white;
+    vertical-align: top;
+    color: #333;
+    margin: 0 auto 9px;
+    max-width: 400px;
+    text-align: center;
+  }
+  .actions {
+    vertical-align: top;
+    padding-left: 10px;
+    button.action.primary {
+      margin-top: 10px;
+      @include button-block__primary();
+      padding: 15px 25px;
+      display: inline-block;
+      transition: all 0.3s ease !important;
+    }
+  }
+  @media (max-width: $screen-sm-min) {
+    .actions button.action.primary {
+      padding: 15px 10px;
+      letter-spacing: 0;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+$tab-title-height: $default-line-height;
+
+.data.items {
+    position: relative;
+    .item {
+    }
+    .title {
+        float: left;
+        width: auto;
+        height: $tab-title-height;
+        margin-right: $indent-small;
+        &.active {
+        }
+    }
+
+    .content {
+        box-sizing: border-box;
+        float: right;
+        margin-left: -100%;
+        width: 100%;
+        margin-top: $tab-title-height;
+        padding-top: $indent-small;
+        display: none;
+        &.active {
+            display: block;
+        }
+        &[role="tabpanel"] {
+            display: block;
+        }
+    }
+}

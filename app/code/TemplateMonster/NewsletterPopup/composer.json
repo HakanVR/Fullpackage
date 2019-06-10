@@ -1,0 +1,14 @@
+{
+    "name" : "templatemonster/newsletter-popup",
+    "description": "Newsletter Pop-Up",
+    "type": "magento2-module",
+    "version": "1.0.1",
+    "autoload": {
+        "psr-4": {
+            "TemplateMonster\\NewsletterPopup\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

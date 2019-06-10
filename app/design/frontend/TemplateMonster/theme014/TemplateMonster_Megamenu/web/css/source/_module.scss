@@ -1,0 +1,129 @@
+/*
+* TM_Megamenu
+*/
+
+.navigation .container {
+  position: relative;
+  z-index: 3;
+}
+
+.navigation {
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+  .col-sm-3 {
+    border-left: 1px solid $theme-line-1;
+    &:first-child {
+      border: 0;
+    }
+  }
+  .menu-banner {
+    display: block;
+    margin-top: -20px;
+    padding-left: 0;
+    border-left: 0;
+    img {
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    @media (max-width: $screen-md-min) {
+      margin-top: 5px;
+    }
+  }
+  .rd-navbar-nav-wrap {
+    display: inline-block;
+    text-align: left;
+  }
+  margin-top: -5px;
+}
+
+.sidebar .navigation li.level0 {
+  a.level-top {
+    padding: 10px;
+  }
+}
+
+.navigation li.level-top .megamenu-wrapper,
+.navigation a.level-top .megamenu-wrapper {
+  padding-top: 30px;
+}
+
+.navigation li.level-top .tm-megamenu {
+  .product {
+    .product-image {
+      margin-bottom: 25px;
+      a {
+        border: 0;
+      }
+    }
+    .price-box {
+      font-size: 20px;
+      color: $primary;
+      margin-bottom: 15px;
+    }
+    .product-name {
+      font-size: 16px;
+      a {
+        color: $secondary-1;
+        &:hover {
+
+          color: $primary;
+        }
+      }
+    }
+
+  }
+}
+
+.rd-navbar-static .navigation {
+  .rd-navbar-megamenu {
+    li > a {
+      margin-bottom: 9px;
+    }
+    div.banner-last {
+      padding-left: 0;
+      border-left: 0;
+      @media (max-width: $screen-md-min - 1) {
+        margin-top: 80px;
+      }
+    }
+    .col-sm-3 {
+      .product {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.navigation li.level-top .tm-megamenu ul.level1 > li > a, .navigation a.level-top .tm-megamenu ul.level1 > li > a {
+  text-transform: capitalize;
+}
+
+@media (max-width: $screen-sm-min - 1) {
+
+  .navigation li.level-top,
+  .navigation a.level-top {
+    position: relative;
+    .megamenu-wrapper {
+      box-shadow: none;
+    }
+  }
+
+  .rd-navbar-fixed .rd-navbar-submenu {
+    .megamenu-wrapper.rd-navbar-megamenu ul li li > a {
+      padding-left: 15px;
+      padding-right: 0;
+    }
+  }
+  .rd-navbar-fixed .rd-navbar-megamenu {
+    .container {
+      max-width: inherit;
+      min-width: inherit;
+    }
+    li {
+      text-transform: uppercase;
+    }
+  }
+}

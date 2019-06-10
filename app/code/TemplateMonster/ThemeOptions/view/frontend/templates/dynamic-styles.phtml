@@ -1,0 +1,151 @@
+<?php /**  */ ?>
+<?php
+$optionsHelper = $this->helper('TemplateMonster\ThemeOptions\Helper\Data');
+?>
+<style>
+
+body {
+    background-color: <?php echo $optionsHelper->getBodyBackgroundColor() ?: 'transparent' ?>;
+    <?php if ($optionsHelper->isBodyBackgroundImage()) : ?>
+        background-image: <?php echo $optionsHelper->getBodyBackgroundImage() ? 'url(' . $this->getBaseUrl() . 'pub/media/theme_options/' . $optionsHelper->getBodyBackgroundImage() . ')' : 'none' ?>;
+        background-size: <?php echo $optionsHelper->getBodyBackgroundImageSize(); ?>;
+        background-attachment: <?php echo $optionsHelper->getBodyBackgroundImageAttachment(); ?>;
+        background-position: <?php echo $optionsHelper->getBodyBackgroundImagePosition(); ?>;
+        background-repeat: <?php echo $optionsHelper->getBodyBackgroundImageRepeat(); ?>;
+    <?php endif; ?>
+}
+
+header.page-header,
+.rd-navbar-static {
+    background-color: <?php echo $optionsHelper->getHeaderBackgroundColor() ?: 'transparent' ?>;
+}
+
+.page-footer{
+    background-color: <?php echo $optionsHelper->getFooterBackgroundColor() ?: 'transparent' ?>;
+    <?php if ($optionsHelper->isFooterBackgroundImage()) : ?>
+        background-image: <?php echo $optionsHelper->getFooterBackgroundImage() ? 'url(' . $this->getBaseUrl() . 'pub/media/theme_options/' . $optionsHelper->getFooterBackgroundImage() . ')' : 'none' ?>;
+        background-size: <?php echo $optionsHelper->getFooterBackgroundImageSize(); ?>;
+        background-attachment: <?php echo $optionsHelper->getFooterBackgroundImageAttachment(); ?>;
+        background-position: <?php echo $optionsHelper->getFooterBackgroundImagePosition(); ?>;
+        background-repeat: <?php echo $optionsHelper->getFooterBackgroundImageRepeat(); ?>;
+    <?php endif; ?>
+}
+/* END General Settings  */
+
+/* Main Theme Settings  */
+.panel.page-header__panel{
+    background-color: <?php echo $optionsHelper->getTopHeadBackgroundColor() ?: 'transparent' ?>;
+    <?php if ($optionsHelper->isTopHeadBackgroundImage()) : ?>
+        background-image: <?php echo $optionsHelper->getTopHeadBackgroundImage() ? 'url(' . $this->getBaseUrl() . 'pub/media/theme_options/' . $optionsHelper->getTopHeadBackgroundImage() . ')' : 'none' ?>;
+        background-size: <?php echo $optionsHelper->getTopHeadBackgroundImageSize(); ?>;
+        background-attachment: <?php echo $optionsHelper->getTopHeadBackgroundImageAttachment(); ?>;
+        background-position: <?php echo $optionsHelper->getTopHeadBackgroundImagePosition(); ?>;
+        background-repeat: <?php echo $optionsHelper->getTopHeadBackgroundImageRepeat(); ?>;
+    <?php endif; ?>
+}
+
+.sidebar .block .block-title{
+    background-color: <?php echo $optionsHelper->getBlockTitleBackgroundColor() ?: 'transparent' ?>;
+    <?php if ($optionsHelper->isBlockTitleBackgroundImage()) : ?>
+        background-image: <?php echo $optionsHelper->getBlockTitleBackgroundImage() ? 'url(' . $this->getBaseUrl() . 'pub/media/theme_options/' . $optionsHelper->getBlockTitleBackgroundImage() . ')' : 'none' ?>;
+        background-size: <?php echo $optionsHelper->getBlockTitleBackgroundImageSize(); ?>;
+        background-attachment: <?php echo $optionsHelper->getBlockTitleBackgroundImageAttachment(); ?>;
+        background-position: <?php echo $optionsHelper->getBlockTitleBackgroundImagePosition(); ?>;
+        background-repeat: <?php echo $optionsHelper->getBlockTitleBackgroundImageRepeat(); ?>;
+    <?php endif; ?>
+}
+/* END Main Theme Settings  */
+
+/* Desktop */
+<?php
+if ($optionsHelper->getItemsPerRow('desktop')) :
+    $desktopItems = $block->getProductItemWidth($optionsHelper->getItemsPerRow('desktop'));
+?>
+    @media screen and (min-width: 1200px) {
+        .products-grid .product-item{
+            -webkit-flex-basis: <?php echo $desktopItems; ?>;
+            -ms-flex-preferred-size: <?php echo $desktopItems; ?>;
+            flex-basis: <?php echo $desktopItems; ?>;
+            max-width: <?php echo $desktopItems; ?>;
+        }
+    }
+<?php endif; ?>
+/* END Desktop */
+
+/* Tablet landscape */
+<?php
+if ($optionsHelper->getItemsPerRow('tablet', 'landscape')) :
+    $tabletLandscapeItems = $block->getProductItemWidth($optionsHelper->getItemsPerRow('tablet', 'landscape'));
+?>
+@media screen and (min-width: 991px) and (max-width: 1199px) {
+    .products-grid .product-item{
+        -webkit-flex-basis: <?php echo $tabletLandscapeItems; ?>;
+        -ms-flex-preferred-size: <?php echo $tabletLandscapeItems; ?>;
+        flex-basis: <?php echo $tabletLandscapeItems; ?>;
+        max-width: <?php echo $tabletLandscapeItems; ?>;
+    }
+}
+<?php endif; ?>
+/* END Tablet landscape */
+
+/* Tablet portrait */
+<?php
+if ($optionsHelper->getItemsPerRow('tablet', 'portrait')) :
+    $tabletPortraitItems = $block->getProductItemWidth($optionsHelper->getItemsPerRow('tablet', 'portrait'));
+?>
+@media screen and (min-width: 768px) and (max-width: 990px) {
+    .products-grid .product-item{
+        -webkit-flex-basis: <?php echo $tabletPortraitItems; ?>;
+        -ms-flex-preferred-size: <?php echo $tabletPortraitItems; ?>;
+        flex-basis: <?php echo $tabletPortraitItems; ?>;
+        max-width: <?php echo $tabletPortraitItems; ?>;
+    }
+}
+<?php endif; ?>
+/* END Tablet portrait */
+
+/* Mobile landscape */
+<?php
+if ($optionsHelper->getItemsPerRow('mobile', 'landscape')) :
+    $mobileLandscapeItems = $block->getProductItemWidth($optionsHelper->getItemsPerRow('mobile', 'landscape'));
+?>
+    @media screen and (min-width: 481px) and (max-width: 767px) {
+        .products-grid .product-item{
+            -webkit-flex-basis: <?php echo $mobileLandscapeItems; ?>;
+            -ms-flex-preferred-size: <?php echo $mobileLandscapeItems; ?>;
+            flex-basis: <?php echo $mobileLandscapeItems; ?>;
+            max-width: <?php echo $mobileLandscapeItems; ?>;
+        }
+    }
+<?php endif; ?>
+/* END Mobile landscape */
+
+/* Mobile portrait */
+<?php
+if ($optionsHelper->getItemsPerRow('mobile', 'portrait')) :
+    $mobilePortraitItems = $block->getProductItemWidth($optionsHelper->getItemsPerRow('mobile', 'portrait'));
+?>
+    @media screen and (max-width: 480px) {
+        .products-grid .product-item{
+            -webkit-flex-basis: <?php echo $mobilePortraitItems; ?>;
+            -ms-flex-preferred-size: <?php echo $mobilePortraitItems; ?>;
+            flex-basis: <?php echo $mobilePortraitItems; ?>;
+            max-width: <?php echo $mobilePortraitItems; ?>;
+        }
+    }
+<?php endif; ?>
+/* Mobile portrait */
+
+</style>
+
+<script type="text/x-magento-init">
+    {
+        ".product-items .description.product-item-description > p": {
+            "cropDescription": {
+                "desktop":"<?php echo $optionsHelper->getShortDescriptionLength('desktop') ?>",
+                "tablet":"<?php echo $optionsHelper->getShortDescriptionLength('tablet') ?>",
+                "mobile":"<?php echo $optionsHelper->getShortDescriptionLength('mobile') ?>"
+             }
+        }
+    }
+</script>

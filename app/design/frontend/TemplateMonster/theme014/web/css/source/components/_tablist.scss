@@ -1,0 +1,133 @@
+[role="tablist"] {
+  //Tablist title
+  [role="tab"] {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: $indent-small;
+    display: inline-block;
+    padding-right: 1rem;
+    @include font-icon('\e5cf');
+    &[aria-selected="true"] {
+      @include font-icon('\e5ce');
+    }
+    &:before {
+      position: absolute;
+      right: 0;
+      top: 2px;
+    }
+  }
+
+  //Tablist content
+  [role="tabpanel"] {
+    margin-bottom: $indent-base;
+  }
+}
+
+.block[role="tablist"] {
+  .title[role="tab"] {
+    display: block;
+  }
+}
+
+.data.items {
+  position: relative;
+  .tab-titles {
+    @include clearfix;
+  }
+  .title {
+    display: block;
+    margin: 0 22px;
+    padding: 0;
+    float: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    height: auto;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      left: 50%;
+      bottom: -14px;
+      height: 4px;
+      background: $primary;
+      transition: 0.3s;
+    }
+
+    &.active,
+    &:hover {
+      a {
+        color: $link-active;
+      }
+      &:after {
+        left: 0;
+        width: 100%;
+      }
+
+    }
+    &:before {
+      display: none;
+    }
+
+    .counter {
+      &:after {
+        content: ")";
+      }
+      &:before {
+        content: "(";
+      }
+    }
+  }
+  .review-content {
+    font-size: 16px;
+  }
+
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 50px 0 0;
+    display: none;
+    float: none;
+    &.active {
+      display: block;
+    }
+    &[role="tabpanel"] {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .data.items {
+    .title {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min - 1) {
+  .data.items {
+    .title {
+      margin: 0;
+      text-align: left;
+      &:after {
+        display: none;
+      }
+      a:hover {
+        color: $default;
+      }
+      &.active {
+        a {
+          color: $primary;
+        }
+      }
+    }
+
+    .content {
+      padding-top: 15px;
+      border-top: 1px solid $theme-line-1;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+//
+//  Local Variables
+//  _____________________________________________
+
+$checkout-opc__border:solid 1px $theme-line-1;
+$checkout-opc__indent: 20px;
+$checkout-opc__content-indent: 10px;
+
+//
+//  Common
+//  _____________________________________________
+
+.opc-block-summary {
+    .table-totals{
+        caption{
+            display: none;
+        }
+    }
+}
+
+.opc-block-shipping-information{
+    border-top: $checkout-opc__border;
+    padding-top: $checkout-opc__indent;
+
+    .shipping-information-title{
+        @extend .heading-4;
+        @include make-flex();
+        @include justify-content(space-between);
+    }
+
+    .shipping-information-content{
+        padding: $checkout-opc__content-indent;
+    }
+
+    .action-edit{
+       background: none;
+       padding: 0;
+       span{
+           display: none;
+       }
+       &:hover{
+           background: none;
+           opacity: 0.5;
+       }
+       &::before{
+           font-family: $fa;
+           content: '\f044';
+           padding-right: 10px;
+       }
+    }
+}
+
+.billing-address-details{
+    margin-bottom: $indent-small;
+}
+
+.opc-payment-additional{
+    margin-top: $indent-base;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@media (max-width: $screen-sm-min) {
+    .opc-block-summary {
+        .table-totals{
+            th{
+                display: block;
+                width: 100%;
+                padding: 10px 0 0;
+            }
+            td{
+            	padding: 0;
+            	&::before{
+	            	display: none;
+	            }
+            }
+        }
+    }
+}

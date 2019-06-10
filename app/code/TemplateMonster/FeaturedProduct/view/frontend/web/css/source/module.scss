@@ -1,0 +1,93 @@
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+
+// import
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_owl.carousel.scss';
+@import '_products-grid.scss';
+@import '_products-list.scss';
+
+/* Main Styles */
+
+
+
+.block.widget.featured {
+  .product-item{
+    position: relative;
+    max-width: 100%;
+
+    // label
+    .product-label{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      z-index: 99;
+      font-size: $label-size;
+      color: $label-color;
+      background-color: $label-bg;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      font-weight: 700;
+    }
+  }
+}
+
+
+// Carousel
+.block.widget.featured .products-grid .owl-carousel .owl-item .product-item {
+  width: 100%;
+}
+
+.block.featured {
+  float: none;
+
+  .block-content .owl-carousel{
+
+    // controls
+    .owl-controls {
+      position: absolute;
+      top: -50px;
+      right: 0;
+
+      .owl-prev{
+        @include font-icon("\f104");
+        display: inline-block;
+      }
+      .owl-next{
+        @include font-icon("\f105");
+        display: inline-block;
+      }
+      .owl-prev,
+      .owl-next{
+        padding: 0 7px;
+        cursor: pointer;
+        &:before{
+          font-size: 36px;
+          color: $secondary;
+          @include transition(.3s ease);
+        }
+        &:hover{
+          &:before{
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .page-header .header.panel,
+  .header.content,
+  .footer.content,
+  .page-wrapper > .widget,
+  .page-wrapper > .page-bottom,
+  .block.category.event,
+  .top-container,
+  .page-main {
+    width: 100% ;
+  }
+}

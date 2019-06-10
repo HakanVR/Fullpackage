@@ -1,0 +1,20 @@
+
+//
+//  Downloadable product
+//  ---------------------------------------------
+
+.product-options-wrapper{
+    .fieldset{
+        >br{
+            display: none;
+        }
+    }
+    .field{
+        .label {
+            line-height: normal;
+        }
+    }
+    .downloads{
+        @include make-flex();
+    }
+}

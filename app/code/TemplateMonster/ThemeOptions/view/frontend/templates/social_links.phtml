@@ -1,0 +1,29 @@
+<?php /** @var \TemplateMonster\ThemeOptions\Block\SocialLinks $block */ ?>
+<style>
+    @media (min-width: 768px) {
+        ul.social-links {
+            padding: 0!important;
+            text-align: right;
+        }
+        ul.social-links.social-links-footer {
+            margin-top: -50px;
+        }
+        ul.social-links li {
+            display: inline-block;
+        }
+    }
+    @media (max-width: 768px) {
+        ul.social-links {
+            display: none;
+        }
+    }
+</style>
+<ul class="social-links social-links-<?php echo $block->getPosition() ?>">
+    <?php foreach ($block->getAvailableSocialLinks() as $type => $link): ?>
+        <li>
+            <a href="<?php echo $link ?>" target="_blank">
+                <img src="<?php echo $block->getSocialLinkImage($type) ?>" alt="" />
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>

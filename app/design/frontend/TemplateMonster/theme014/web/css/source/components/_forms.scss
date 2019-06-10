@@ -1,0 +1,212 @@
+//
+//  Form styles
+//  _____________________________________________
+
+fieldset,
+.fieldset {
+  outline: none;
+}
+
+//Form layout
+.field {
+  margin-bottom: $indent-small;
+  position: relative;
+  &.additional,
+  &.choice {
+    margin-bottom: 0;
+  }
+  .label,
+  label {
+    margin-right: $gutter-width;
+    line-height: $input-line-height;
+    padding: $input-padding-vert 0;
+    display: inline-block;
+    text-transform: uppercase;
+    color: $secondary-1;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .control {
+  }
+  .checkbox {
+    margin: .75rem .5rem 0 0;
+  }
+  input.qty {
+    width: 6rem;
+  }
+}
+
+.form.inline {
+  .field-wrap {
+  }
+  .actions {
+  }
+}
+
+//Typography
+.legend,
+legend {
+  font-size: 1rem;
+  font-weight: 600;
+  + br {
+    display: none;
+  }
+}
+
+.control {
+  .nested {
+    margin-top: $indent-small;
+    .field {
+      margin-bottom: 0;
+    }
+  }
+}
+
+input[type="text"], .input-text,
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: $input-padding-vert $input-padding-hor;
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+  background: $input-bg-color;
+  border: 0;
+  color: $default;
+  font-style: italic;
+
+  &.mage-error {
+    font-style: normal;
+    background: #fceaf1;
+
+  }
+}
+
+select {
+  height: $input-height;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+.radio,
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  height: $input-line-height;
+  margin: $input-padding-vert $input-padding-vert 0 0;
+}
+
+.email {
+}
+
+p.required {
+  color: $red;
+}
+
+//Inline form
+.form-inline {
+  @include make-flex();
+  .control {
+    input,
+    select,
+    textarea {
+      width: auto;
+    }
+  }
+}
+
+.fieldset > .field.required > .label::after,
+.fieldset > .field._required > .label::after,
+.fieldset > .fields > .field.required > .label::after,
+.fieldset > .fields > .field._required .label::after {
+  color: $red;
+  content: "*";
+  font-size: 12px;
+  margin: 0 0 0 5px;
+}
+
+//
+//  Button styles
+//  ---------------------------------------------
+
+//Block buttons
+.actions .action,
+.actions-toolbar .action,
+.box-actions .action,
+.product-item-actions .action,
+.checkout.methods .action {
+  @include button-block(); //@mixin source/_mixins.scss
+}
+
+//Primary Buttons
+.actions-primary .action,
+.primary .action,
+.action.primary,
+.checkout.methods .primary {
+  @include button-block__primary(); //@mixin source/_mixins.scss
+}
+
+//Icon buttons
+a.action {
+  &.delete,
+  &.edit,
+  &.change-password {
+    display: inline-block;
+    padding: $button-padding-vert $button-padding-hor;
+    span {
+      display: none;
+    }
+    border: 0;
+  }
+
+  &.delete {
+    @include font-icon('\e5cd');
+  }
+  &.edit {
+    @include font-icon("\e150");
+  }
+}
+
+.actions-toolbar {
+  @include make-flex();
+  margin: 0 -0.25rem;
+  .action {
+    margin: 0 0.25rem;
+    display: inline-block;
+  }
+}
+
+table {
+  thead span {
+    color: $secondary-1;
+  }
+}
+
+input[placeholder]:focus {
+  color: #ccc;
+}
+
+input[placeholder]:focus::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+//
+//  Messages styles
+//  ---------------------------------------------
+
+div.mage-error {
+  font-size: .8rem;
+  line-height: 1.2rem;
+  font-style: italic;
+  color: #F11F17;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}

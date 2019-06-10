@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="featured_products"
+            class="TemplateMonster\FeaturedProduct\Block\FeaturedProduct\Widget\Product">
+        <label translate="true">Featured products</label>
+        <description translate="true">Featured products.</description>
+        <parameters>
+
+            <parameter name="product_types" xsi:type="select" visible="true">
+                <label translate="true">Product types</label>
+                <description translate="true">Product types</description>
+                <options>
+                    <option name="new_product" value="new_product" selected="true">
+                        <label translate="true">New Products</label>
+                    </option>
+                    <option name="sale_product" value="sale_product">
+                        <label translate="true">Sale Products</label>
+                    </option>
+                    <option name="viewed_product" value="viewed_product">
+                        <label translate="true">Most Viewed Products</label>
+                    </option>
+                    <option name="bestsellers_product" value="bestsellers_product">
+                        <label translate="true">Bestsellers Products</label>
+                    </option>
+                    <option name="rated_product" value="rated_product">
+                        <label translate="true">Top Rated Products</label>
+                    </option>
+                    <option name="manual_product" value="manual_product">
+                        <label translate="true">Manual Products</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="title" xsi:type="text" visible="true">
+                <label translate="true">Title</label>
+                <description translate="true">Name of the title</description>
+            </parameter>
+            <parameter name="number_per_view" xsi:type="text" visible="true">
+                <label translate="true">Products per Veiw</label>
+                <description translate="true">Number of products per Veiw</description>
+            </parameter>
+
+            <parameter name="show_carousel" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Carousel</label>
+                <description translate="true">Display as carousel</description>
+            </parameter>
+
+            <parameter name="number_to_display" xsi:type="text" visible="true">
+                <label translate="true">Number of products to Display</label>
+                <description translate="true">Number of products to display in carousel</description>
+                <depends>
+                    <parameter name="show_carousel" value="1" />
+                </depends>
+            </parameter>
+            <parameter name="number_per_row" xsi:type="text" visible="true">
+                <label translate="true">Products per row</label>
+                <description translate="true">Number of products per row</description>
+                <depends>
+                    <parameter name="show_carousel" value="0" />
+                </depends>
+            </parameter>
+
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+            <parameter name="show_label" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Show Label</label>
+            </parameter>
+            <parameter name="widget_label" xsi:type="text" required="true" visible="true">
+                <label translate="true">Label</label>
+                <depends>
+                    <parameter name="show_label" value="1" />
+                </depends>
+            </parameter>
+            <parameter name="product_ids" xsi:type="block" visible="true" sort_order="10">
+                <label translate="true">Choose custom products</label>
+                <block class="TemplateMonster\FeaturedProduct\Block\Adminhtml\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select ...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="widget/products-grid.phtml" selected="true">
+                        <label translate="true">Products Grid</label>
+                    </option>
+                    <option name="list" value="widget/products-list.phtml">
+                        <label translate="true">Products List</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

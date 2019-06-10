@@ -1,0 +1,55 @@
+<?php /** @var $block TemplateMonster\NewsletterPopup\Block\PopUp\Styles */ ?>
+<style>
+    .modal-popup.newsletter-popup .block.newsletter {
+        width: 100%;
+    }
+    .modal-popup.newsletter-popup .actions {
+        display: none;
+    }
+    <?php if ($block->getPopupWidth()): ?>
+    .modal-popup.newsletter-popup .modal-inner-wrap {
+        width: <?php echo $block->getPopupWidth() ?>px;
+    }
+    <?php endif; ?>
+    .modal-popup.newsletter-popup .buttons-container button {
+        box-shadow: none;
+    }
+    .modal-popup.newsletter-popup .buttons-container button.subscribe {
+        background-color: <?php echo $block->getButtonColor() ?: '#1979c3' ?>;
+        border-color: <?php echo $block->getButtonColor() ?: '#1979c3' ?>;
+    }
+    .modal-popup.newsletter-popup .buttons-container button.subscribe:hover {
+        background-color: <?php echo $block->getButtonHoverColor() ?: '#006bb4' ?>;
+    }
+    .modal-popup.newsletter-popup .buttons-container button:not(.subscribe) {
+        color: <?php echo $block->getButtonColor() ?: '#1979c3' ?>;
+        background: none;
+        border-color:  <?php echo $block->getButtonBorderColor() ?: 'inherit' ?>;
+    }
+    .modal-popup.newsletter-popup .buttons-container button:not(.subscribe):hover {
+        color: #fff;
+        background-color: <?php echo $block->getButtonHoverColor() ?: '#1979c3' ?>;
+        border-color: <?php echo $block->getButtonHoverColor() ?: '#1979c3' ?>;
+    }
+    .modal-popup .modal-social {
+        font-size: 1.75em;
+    }
+    .modal-popup .modal-social .fa {
+        padding: 7px 5px;
+    }
+    .modal-popup .modal-social :link,
+    .modal-popup .modal-social :hover {
+        text-decoration: none;
+    }
+    <?php foreach ($block->getAvailableIcons() as $icon): ?>
+    .modal-popup .modal-social .fa-<?php echo $icon ?> {
+        color: <?php echo $block->getIconColor($icon) ?: '#000' ?>;
+        background-color: <?php echo $block->getIconBackground($icon) ?: '#fff' ?>;
+    }
+    .modal-popup .modal-social .fa-<?php echo $icon ?>:hover,
+    .modal-popup .modal-social .fa-<?php echo $icon ?>:active {
+        color: <?php echo $block->getIconHoverColor($icon) ?: '#000' ?>;
+        background-color: <?php echo $block->getIconBackgroundHover($icon) ?: '#fff' ?>;
+    }
+    <?php endforeach; ?>
+</style>

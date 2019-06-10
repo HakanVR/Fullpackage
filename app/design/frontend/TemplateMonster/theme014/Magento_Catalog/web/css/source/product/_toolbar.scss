@@ -1,0 +1,237 @@
+//
+//  Toolbar
+//  ---------------------------------------------
+
+.toolbar-products {
+  margin-bottom: 50px;
+  @include clearfix;
+
+  .field {
+    > .label,
+    > .control,
+    > .action {
+      display: inline-block;
+    }
+    > .label {
+    }
+    > .control {
+      border-left: 1px solid $theme-line-1;
+      border-right: 1px solid $theme-line-1;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .field {
+      > .label {
+      }
+      > .control {
+        width: auto;
+      }
+    }
+
+  }
+  @media (max-width: $screen-sm-min - 1) {
+    margin-bottom: 0;
+    @include clearfix;
+    .modes,
+    .toolbar-amount,
+    .limiter {
+      display: none;
+    }
+    .label.sorter-label {
+      display: block;
+    }
+    .field > .control {
+      border: 0;
+      padding: 0;
+    }
+    .select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+    .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+      background: none;
+    }
+    .select2-container--default .select2-selection--single {
+      padding-left: 0;
+      &:hover {
+        background: none;
+      }
+    }
+    .toolbar-sorter .sorter-action {
+      margin-left: 4px;
+    }
+  }
+}
+
+.toolbar-container {
+  .filter-toggle {
+    @include button-block(); //@mixin source/_mixins.scss
+    margin-bottom: 20px;
+    display: none;
+  }
+}
+
+@media (max-width: $screen-sm-min - 1) {
+  .toolbar-container {
+    @include clearfix;
+    .filter-toggle {
+      float: left;
+    }
+    .toolbar-products {
+      float: right;
+    }
+  }
+}
+// Modes
+.modes {
+  float: left;
+  margin-right: 25px;
+  padding-top: 5px;
+
+  .modes-label {
+    display: none;
+  }
+  .modes-mode {
+    span {
+      display: none;
+    }
+    &.active {
+      color: $secondary-2;
+    }
+    a:hover {
+      color: $link-hover;
+    }
+  }
+  .mode-grid {
+    @include font-icon('\e8f0');
+    font-size: 24px;
+    line-height: 1;
+  }
+  .mode-list {
+    @include font-icon('\e8ef');
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+//Amount
+.toolbar-amount {
+  font-style: italic;
+  float: left;
+  padding-top: 5px;
+}
+
+//Pages
+.pages {
+  display: none;
+  text-align: center;
+  padding-top: 50px;
+  .pages-items {
+    position: relative;
+    display: inline-block;
+    @include clearfix;
+  }
+  .item {
+    float: left;
+    padding: 0 8px;
+    font-size: 1rem;
+    line-height: 1;
+    font-style: italic;
+    &.current {
+      color: $secondary-1;
+    }
+    &.pages-item-previous,
+    &.pages-item-next {
+    }
+    &.pages-item-previous {
+      a span:not(.label):before {
+        content: 'Prev';
+      }
+    }
+    &.pages-item-next {
+      a span:not(.label):before {
+        content: 'Next';
+
+      }
+    }
+    a {
+      color: $default;
+      &:hover {
+        color: $primary;
+      }
+
+      &.previous,
+      &.next {
+        text-decoration: underline;
+        color: $primary;
+        &:hover {
+          color: $link-regular;
+        }
+      }
+    }
+
+  }
+  .tollbar-bottom & {
+    display: block;
+  }
+
+}
+
+//Limiter
+.field.limiter {
+  float: right;
+  .limiter-text {
+    display: none;
+  }
+  .label {
+    padding: 0;
+    line-height: 30px;
+  }
+  @media (max-width: $screen-sm-min - 1) {
+    float: none;
+    clear: left;
+  }
+}
+
+//Sorter
+.toolbar-sorter {
+  float: right;
+  margin-left: 25px;
+  .label.sorter-label {
+    padding: 0;
+    line-height: 30px;
+  }
+  .sorter-action {
+    margin-left: $indent-small;
+    padding: $input-padding-vert 0;
+    line-height: $input-height;
+    span {
+      display: none;
+    }
+    &.sort-asc {
+      @include font-icon('\e164');
+      font-size: 24px;
+      line-height: 1;
+    }
+    &.sort-desc {
+      @include font-icon('\e164');
+      font-size: 24px;
+      line-height: 1;
+      transform: rotate(180deg);
+    }
+  }
+  @media (max-width: $screen-sm-min - 1) {
+    clear: left;
+    float: left;
+    margin-left: 0;
+  }
+}
+
+.tollbar-bottom {
+  .modes,
+  .toolbar-amount,
+  .limiter,
+  .toolbar-sorter {
+    display: none;
+  }
+}

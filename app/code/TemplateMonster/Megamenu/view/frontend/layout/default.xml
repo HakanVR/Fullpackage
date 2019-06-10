@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+        <css src='TemplateMonster_Megamenu::fonts/font-awesome-4.5.0/css/font-awesome.min.css' media='screen' />
+    </head>
+    <body>
+        <referenceContainer name="div.sidebar.main">
+            <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.sidebarnav" template="html/topmenu.phtml" ifconfig="megamenu/config/megamenu_general_show_left" before="-" ttl="3600" />
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,169 @@
+/*
+* @subsection   RD Navbar Collapse
+*
+* @description  Describes style declarations for RD Navbar collapse
+*/
+
+.rd-navbar-collapse,
+.rd-navbar-collapse-toggle{
+  display: none;
+  .switcher.currency,
+  .switcher.language{
+    display: none;
+  }
+}
+
+.rd-navbar-static{
+  .rd-navbar-inner{
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rd-navbar-collapse{
+    display: block;
+    @include clearfix;
+    li{
+      float: left;
+      margin: 0 20px 0 0;
+      @media (max-width: $screen-xl-min - 1) {
+        float: none;
+      }
+      .counter {
+        &:after {
+          content: ")";
+        }
+        &:before {
+          content: "(";
+        }
+      }
+    }
+  }
+}
+
+.rd-navbar-fixed{
+  .rd-navbar-collapse{
+    display: block;
+    @extend %rd-navbar-transition;
+    text-align: left;
+    position: fixed;
+    top: 56px;
+    right: 4px;
+    color: $rd-navbar-contrast-color;
+    padding:15px;
+    z-index: 19;
+    width: 250px;
+    box-shadow: 0 0 0 0 nth($rd-navbar-shadow-medium, 5);
+    visibility: hidden;
+    overflow: hidden;
+    transition: .3s box-shadow ease .2s;
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: darken($rd-navbar-accent-color, 3%);
+      width: 48px;
+      height: 48px;
+      @include transform(scale(0));
+      @extend %rd-navbar-transition;
+    }
+
+    li{
+      position: relative;
+      opacity: 0;
+      transition: .3s all ease 0s;
+    }
+
+ 
+    > li > a{
+      display: block;
+      padding: 11px 16px;
+
+      &:hover{
+        background: lighten($rd-navbar-contrast-color, 75%);
+      }
+    }
+
+    &.active{
+      visibility: visible;
+      box-shadow: $rd-navbar-shadow-medium;
+
+      li{
+        transition: .3s all ease .2s;
+        opacity: 1;
+      }
+
+      &:before{
+        background: $rd-navbar-accent-color;
+        @include transform(scale(25));
+      }
+    }
+    .switcher.currency,
+    .switcher.language{
+      display: block;
+      margin: 0 0 7px;
+
+      .actions .action{
+        background: none;
+        padding: 0;
+        border: 0;
+        color: $link-regular;
+        text-transform: uppercase;
+        &:hover {
+          color: $primary;
+        }
+      }
+      strong{
+        font-weight: normal;
+      }
+      .dropdown .mage-dropdown-dialog{
+        width: 217px;
+        position: relative;
+        top:0;
+        background: none;
+        a {
+        }
+      }
+    }
+
+    .links {
+      li{
+        display: block;
+        margin: 0 0 7px;
+        a{
+          color: $rd-navbar-contrast-color;
+          text-transform: uppercase;
+
+          &:hover{
+            color: $rd-navbar-hover-color;
+          }
+        }
+      }
+    }
+    
+  }
+
+  .switcher.currency,
+  .switcher.language{
+    display: none;
+  }
+
+  .rd-navbar-collapse-toggle{
+    display: block;
+    position: fixed;
+    top: 4px;
+    right: 4px;
+    font-family: $fa;
+    width: 48px;
+    height: 48px;
+    @include toggle-icons-via-rotation(48px, 28px, $rd-navbar-contrast-color, '\f142', '\f141');
+    z-index: 3;
+    &.active {
+      z-index:20;
+    }
+  }
+}

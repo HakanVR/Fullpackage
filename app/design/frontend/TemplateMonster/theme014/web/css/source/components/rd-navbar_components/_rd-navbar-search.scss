@@ -1,0 +1,243 @@
+/*
+* @subsection   RD Navbar Search
+*
+* @description  Describes style declarations for RD Navbar search
+*/
+
+.rd-navbar-search {
+  display: none;
+}
+
+.rd-navbar-static {
+  .rd-navbar-search {
+    display: block;
+    .form-group {
+      @extend %rd-navbar-transition;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      bottom: -10px;
+      width: 1120px;
+      left: 50%;
+      margin-left: -615px;
+      z-index: 3;
+      transition: all 0.1s ease;
+      @media (min-width: $screen-lg-min) and (max-width: 1230px) {
+        width: 1100px;
+      }
+      @media (max-width: $screen-lg-min - 1) {
+        width: 920px;
+        margin-left: -470px;
+      }
+      @media (max-width: $screen-md-min - 1) {
+        width: 680px;
+        margin-left: -340px;
+
+      }
+
+      input {
+        width: 100%;
+        height: 50px;
+        display: block;
+        line-height: normal;
+        padding-right: 65px;
+        color: $secondary-1;
+        &:focus {
+          color: #999999;
+        }
+      }
+    }
+    &.active {
+      .form-group {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .field.search {
+      margin-bottom: 0;
+    }
+    .actions {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    button[type="submit"] {
+      @include font-icon('\e8b6');
+      height: 50px;
+      font-size: 28px;
+      padding: 3px 0 0;
+      position: absolute;
+      right: 0;
+      width: 50px;
+      color: $primary;
+      line-height: 1;
+      background: none;
+      border: 0;
+
+      span {
+        display: none;
+      }
+      &:hover {
+        color: $secondary-1;
+      }
+    }
+
+  }
+
+  .rd-navbar-search-toggle {
+    display: inline-block;
+    font-size: 28px;
+    color: $primary;
+    vertical-align: middle;
+    height: 28px;
+    margin: -10px 0;
+    &:before {
+      @include font-icon__before("\e8b6");
+    }
+    &:hover {
+      color: $link-regular;
+    }
+    &.active {
+      position: absolute;
+      right: 0;
+      &:before {
+        @include font-icon__before("\e5cd");
+      }
+      @media (min-width: $screen-lg-min) and (max-width: 1230px) {
+        right: 0;
+      }
+      @media (max-width: $screen-lg-min - 1) {
+        right: 0;
+      }
+    }
+    &.active {
+      color: $secondary-2;
+      &:hover {
+        color: $secondary-1;
+      }
+    }
+  }
+
+  &.rd-navbar--is-clone {
+    .rd-navbar-search .form-group {
+      bottom: 2px;
+    }
+    .rd-navbar-search .form-group input {
+      background: #fff;
+    }
+    .rd-navbar-search-toggle {
+      display: none;
+    }
+
+  }
+}
+
+.rd-navbar-fixed {
+  .rd-navbar-search-toggle {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 55px;
+    font-family: $fa;
+    width: 56px;
+    height: 56px;
+    z-index: 4;
+    color: $primary;
+    &:before {
+      @include font-icon__before("\e8b6");
+      font-size: 28px;
+      vertical-align: middle;
+    }
+    &.active {
+      &:before {
+        @include font-icon__before("\e5cd");
+      }
+    }
+    &.active {
+      background: #fff;
+      color: $secondary-2;
+      left: auto;
+      right: 0;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .rd-navbar-search {
+    display: block;
+
+    .form-group {
+      position: fixed;
+      top: 0;
+      padding-top: 4px;
+      left: 10px;
+      right: 55px;
+      height: 56px;
+      z-index: 17;
+      @extend %rd-navbar-transition;
+      visibility: hidden;
+      opacity: 0;
+      input {
+        width: 100%;
+        display: block;
+        line-height: normal;
+        height: 50px;
+      }
+    }
+
+    &.active {
+      .form-group {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    form {
+      button[type="submit"] {
+        @include font-icon('\e8b6');
+        font-size: 28px;
+        background: none;
+        height: 46px;
+        line-height: 56px;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 46px;
+        border: 0;
+        color: $primary;
+        span {
+          display: none;
+        }
+        &:hover {
+          color: $link-regular;
+        }
+      }
+    }
+  }
+}
+.menu-logo {
+  margin-bottom: 25px;
+  display: block;
+}
+.search.found {
+
+}
+
+.search.found,
+.search.summary {
+  margin-bottom: 10px;
+  strong {
+    color: $secondary-1;
+  }
+}
+
+.catalogsearch-advanced-result {
+  .message.notice {
+    padding-bottom: 0.8rem;
+    div::after {
+      display: none;
+    }
+  }
+}

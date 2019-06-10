@@ -1,0 +1,162 @@
+//
+//  Wishlist block
+//  ---------------------------------------------
+
+.block-wishlist {
+  .product-item {
+    display: block;
+    margin-bottom: $indent-base;
+  }
+
+  .product-item-photo {
+    float: left;
+    width: 75px;
+  }
+  .product-item-name {
+    font-weight: normal;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .price-box {
+    color: $default;
+  }
+  .product-item-details {
+    overflow: hidden;
+    margin-left: 85px;
+    padding-right: 20px;
+    position: relative;
+    margin-top: $indent-small;
+  }
+  .product-item-actions {
+    @include justify-content(space-between);
+    margin: 0;
+    .actions-primary {
+      margin: 0;
+    }
+  }
+  .empty {
+    margin-top: $indent-small;
+  }
+
+  .actions-secondary {
+    position: absolute;
+    top: 2px;
+    right: 0;
+
+    .btn-remove {
+      background-color: transparent;
+      padding: 0;
+      &:hover {
+        background-color: transparent;
+        color: $secondary-1;
+      }
+
+      &:before {
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: $screen-md-min - 1) {
+    .product-item-details {
+      clear: left;
+      margin: 0;
+    }
+  }
+}
+
+//
+//  Wishlist page
+//  ---------------------------------------------
+
+.form-wishlist-items {
+  .actions-toolbar {
+    @include justify-content(space-between);
+    > .primary {
+      @include order(2);
+    }
+    > .secondary {
+      @include order(1);
+    }
+  }
+  .actions-toolbar {
+    border: 1px solid $theme-line-1;
+    margin: 20px 0 0;
+    padding: 10px;
+    .action {
+      margin: 0.25rem;
+    }
+    @media (max-width: $screen-md-min - 1) {
+      display: block;
+      .action {
+        width: 100%;
+        text-align: center;
+      }
+
+    }
+  }
+
+}
+
+.products-grid.wishlist {
+  .product-item-name {
+    display: block;
+  }
+  .product-item-info {
+    @include clearfix;
+  }
+  .product-item-inner {
+    float: none;
+    display: block;
+  }
+  .price-box .price-as-configured {
+    margin-bottom: .5rem;
+  }
+  .field label.label {
+    padding-top: 0;
+  }
+  .box-tocart {
+    margin-bottom: $indent-small;
+    > .fieldset {
+      @include clearfix;
+
+      .product-item-actions {
+        float: left;
+        margin-left: 1rem;
+      }
+    }
+    .field.qty {
+      @include make-flex;
+      float: left;
+      .label {
+        @include make-flex;
+        @include align-items(center);
+        padding-bottom: 0;
+        margin-right: .5rem;
+      }
+      input.qty {
+        width: 4rem;
+        padding: .4rem .5rem .4rem 1rem;
+      }
+    }
+    button.tocart {
+      &:before {
+        font-family: $fl-line-icon;
+        content: "\e061";
+        vertical-align: middle;
+        margin-top: 3px;
+        display: inline-block;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  .product-item-actions {
+    display: block;
+    margin: 0;
+    .actions-primary {
+      margin: 0;
+    }
+  }
+
+}

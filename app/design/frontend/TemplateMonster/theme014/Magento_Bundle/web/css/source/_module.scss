@@ -1,0 +1,89 @@
+//
+//  Bundle product view
+//  _____________________________________________
+
+.page-product-bundle {
+
+}
+
+.bundle-actions {
+  margin-bottom: $indent-small;
+}
+
+//
+//  Options
+//  ---------------------------------------------
+
+.bundle-options-container {
+  @include flex-basis(100%);
+  @include order(3);
+  @include make-col();
+}
+
+.bundle-options-wrapper {
+  .legend {
+    margin-bottom: $indent-small;
+  }
+}
+
+.fieldset-bundle-options__wrapper {
+  margin-top: $indent-small;
+  .field.option {
+    margin-bottom: $indent-base;
+    > .label {
+      font-weight: 600;
+    }
+    .price {
+      font-size: inherit;
+    }
+  }
+
+  .qty-holder {
+    margin-top: $indent-small;
+    @include make-flex();
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .fieldset-bundle-options__wrapper {
+    @include make-flex();
+    @include flex-wrap(wrap);
+    @include make-row();
+    .field.option {
+      @include make-col();
+      @include flex-basis(50%);
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .fieldset-bundle-options__wrapper {
+    .field.option {
+      @include flex-basis(33.33%);
+    }
+  }
+}
+
+//
+//  Summary
+//  ---------------------------------------------
+
+.block-bundle-summary {
+  > .title {
+    margin-bottom: $indent-small;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .block-bundle-summary {
+    > .content {
+      @include make-flex();
+      @include make-row();
+      > div {
+        @include make-col();
+        @include flex-basis(50%);
+      }
+    }
+
+  }
+}

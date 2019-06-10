@@ -1,0 +1,64 @@
+//
+//  Local Variables
+//  _____________________________________________
+
+$shipping-item__border: solid 1px lighten($default, 60%);
+$shipping-item__indent: 20px;
+
+//
+//  Common
+//  _____________________________________________
+
+.opc-wrapper{
+    .shipping-address-item{
+        padding: $shipping-item__indent;
+        border: solid 1px transparent;
+        &.selected-item{
+            border: $shipping-item__border;
+        }
+        
+    }
+}
+
+.form-shipping-address{
+    .field.street{
+        label{
+            display: none;
+        }
+    }
+}
+
+.table-checkout-shipping-method{
+    width: 100%;
+    margin-bottom: $indent-small;
+    th{
+        font-weight: 600;
+        padding: $input-padding-vert 0;
+        text-transform: uppercase;
+        color: $secondary-1;
+    }
+    td.ch-method{
+        .radio,
+        input[type="radio"]{
+            margin: 0;
+        }
+    }
+    td > span{
+        display: inline-block;
+
+    }
+}
+.methods-shipping{
+    margin-bottom: $indent-base;
+}
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+
+
+//
+//  Desktop
+//  _____________________________________________

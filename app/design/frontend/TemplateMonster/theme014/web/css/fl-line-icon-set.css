@@ -1,0 +1,393 @@
+/**
+ * Title: Line icon set Flaticon Pack
+ * Author: Situ Herrera
+ * Source: http://www.flaticon.com/packs/line-icon-set
+ * License:  CC BY 3.0 (http://creativecommons.org/licenses/by/3.0/)
+ */
+
+@font-face {
+	font-family: "fl-line-icon-set";
+	src: url("../fonts/fl-line-icon-set/fl-line-icon-set.eot");
+	src: url("../fonts/fl-line-icon-set/fl-line-icon-set.eot#iefix") format("embedded-opentype"),
+	url("../fonts/fl-line-icon-set/fl-line-icon-set.woff") format("woff"),
+	url("../fonts/fl-line-icon-set/fl-line-icon-set.ttf") format("truetype"),
+	url("../fonts/fl-line-icon-set/fl-line-icon-set.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.fl-line-icon-set-ico,
+[class^="fl-line-icon-set-"]:before, [class*=" fl-line-icon-set-"]:before,
+[class^="fl-line-icon-set-"]:after, [class*=" fl-line-icon-set-"]:after {   
+	font-family: 'fl-line-icon-set';
+    font-size: inherit;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.fl-line-icon-set-amplified:before {
+	content: "\e000";
+}
+.fl-line-icon-set-arrow434:before {
+	content: "\e001";
+}
+.fl-line-icon-set-arrow435:before {
+	content: "\e002";
+}
+.fl-line-icon-set-arrow436:before {
+	content: "\e003";
+}
+.fl-line-icon-set-arrow437:before {
+	content: "\e004";
+}
+.fl-line-icon-set-arrowhead4:before {
+	content: "\e005";
+}
+.fl-line-icon-set-audio28:before {
+	content: "\e006";
+}
+.fl-line-icon-set-battery74:before {
+	content: "\e007";
+}
+.fl-line-icon-set-big80:before {
+	content: "\e008";
+}
+.fl-line-icon-set-big81:before {
+	content: "\e009";
+}
+.fl-line-icon-set-blank20:before {
+	content: "\e00a";
+}
+.fl-line-icon-set-camera43:before {
+	content: "\e00b";
+}
+.fl-line-icon-set-cassette7:before {
+	content: "\e00c";
+}
+.fl-line-icon-set-cinema13:before {
+	content: "\e00d";
+}
+.fl-line-icon-set-circular45:before {
+	content: "\e00e";
+}
+.fl-line-icon-set-circular46:before {
+	content: "\e00f";
+}
+.fl-line-icon-set-circular47:before {
+	content: "\e010";
+}
+.fl-line-icon-set-circular48:before {
+	content: "\e011";
+}
+.fl-line-icon-set-circular49:before {
+	content: "\e012";
+}
+.fl-line-icon-set-circular50:before {
+	content: "\e013";
+}
+.fl-line-icon-set-cloud102:before {
+	content: "\e014";
+}
+.fl-line-icon-set-cloudy12:before {
+	content: "\e015";
+}
+.fl-line-icon-set-coffee17:before {
+	content: "\e016";
+}
+.fl-line-icon-set-cogwheel8:before {
+	content: "\e017";
+}
+.fl-line-icon-set-compact8:before {
+	content: "\e018";
+}
+.fl-line-icon-set-compass39:before {
+	content: "\e019";
+}
+.fl-line-icon-set-connected8:before {
+	content: "\e01a";
+}
+.fl-line-icon-set-crop2:before {
+	content: "\e01b";
+}
+.fl-line-icon-set-cross39:before {
+	content: "\e01c";
+}
+.fl-line-icon-set-curve19:before {
+	content: "\e01d";
+}
+.fl-line-icon-set-diamond18:before {
+	content: "\e01e";
+}
+.fl-line-icon-set-document58:before {
+	content: "\e01f";
+}
+.fl-line-icon-set-dollar79:before {
+	content: "\e020";
+}
+.fl-line-icon-set-door7:before {
+	content: "\e021";
+}
+.fl-line-icon-set-double23:before {
+	content: "\e022";
+}
+.fl-line-icon-set-double24:before {
+	content: "\e023";
+}
+.fl-line-icon-set-downloading3:before {
+	content: "\e024";
+}
+.fl-line-icon-set-drawing4:before {
+	content: "\e025";
+}
+.fl-line-icon-set-empty20:before {
+	content: "\e026";
+}
+.fl-line-icon-set-eyes:before {
+	content: "\e027";
+}
+.fl-line-icon-set-fast10:before {
+	content: "\e028";
+}
+.fl-line-icon-set-fast11:before {
+	content: "\e029";
+}
+.fl-line-icon-set-file24:before {
+	content: "\e02a";
+}
+.fl-line-icon-set-film24:before {
+	content: "\e02b";
+}
+.fl-line-icon-set-fire13:before {
+	content: "\e02c";
+}
+.fl-line-icon-set-flag26:before {
+	content: "\e02d";
+}
+.fl-line-icon-set-flat10:before {
+	content: "\e02e";
+}
+.fl-line-icon-set-fluff1:before {
+	content: "\e02f";
+}
+.fl-line-icon-set-four26:before {
+	content: "\e030";
+}
+.fl-line-icon-set-full21:before {
+	content: "\e031";
+}
+.fl-line-icon-set-grocery10:before {
+	content: "\e032";
+}
+.fl-line-icon-set-half11:before {
+	content: "\e033";
+}
+.fl-line-icon-set-heart66:before {
+	content: "\e034";
+}
+.fl-line-icon-set-home62:before {
+	content: "\e035";
+}
+.fl-line-icon-set-huge3:before {
+	content: "\e036";
+}
+.fl-line-icon-set-increasing5:before {
+	content: "\e037";
+}
+.fl-line-icon-set-kings:before {
+	content: "\e038";
+}
+.fl-line-icon-set-letter11:before {
+	content: "\e039";
+}
+.fl-line-icon-set-light44:before {
+	content: "\e03a";
+}
+.fl-line-icon-set-lines:before {
+	content: "\e03b";
+}
+.fl-line-icon-set-low20:before {
+	content: "\e03c";
+}
+.fl-line-icon-set-magnification3:before {
+	content: "\e03d";
+}
+.fl-line-icon-set-maps5:before {
+	content: "\e03e";
+}
+.fl-line-icon-set-mathematical3:before {
+	content: "\e03f";
+}
+.fl-line-icon-set-microphone26:before {
+	content: "\e040";
+}
+.fl-line-icon-set-molecular:before {
+	content: "\e041";
+}
+.fl-line-icon-set-multiple18:before {
+	content: "\e042";
+}
+.fl-line-icon-set-music63:before {
+	content: "\e043";
+}
+.fl-line-icon-set-mute7:before {
+	content: "\e044";
+}
+.fl-line-icon-set-navigation8:before {
+	content: "\e045";
+}
+.fl-line-icon-set-newspaper8:before {
+	content: "\e046";
+}
+.fl-line-icon-set-no16:before {
+	content: "\e047";
+}
+.fl-line-icon-set-open89:before {
+	content: "\e048";
+}
+.fl-line-icon-set-open90:before {
+	content: "\e049";
+}
+.fl-line-icon-set-padlock18:before {
+	content: "\e04a";
+}
+.fl-line-icon-set-paint26:before {
+	content: "\e04b";
+}
+.fl-line-icon-set-paper43:before {
+	content: "\e04c";
+}
+.fl-line-icon-set-paper44:before {
+	content: "\e04d";
+}
+.fl-line-icon-set-personal5:before {
+	content: "\e04e";
+}
+.fl-line-icon-set-phone51:before {
+	content: "\e04f";
+}
+.fl-line-icon-set-picture10:before {
+	content: "\e050";
+}
+.fl-line-icon-set-plant10:before {
+	content: "\e051";
+}
+.fl-line-icon-set-play35:before {
+	content: "\e052";
+}
+.fl-line-icon-set-previous6:before {
+	content: "\e053";
+}
+.fl-line-icon-set-profile7:before {
+	content: "\e054";
+}
+.fl-line-icon-set-public5:before {
+	content: "\e055";
+}
+.fl-line-icon-set-rainy5:before {
+	content: "\e056";
+}
+.fl-line-icon-set-religion1:before {
+	content: "\e057";
+}
+.fl-line-icon-set-rewind22:before {
+	content: "\e058";
+}
+.fl-line-icon-set-rotating10:before {
+	content: "\e059";
+}
+.fl-line-icon-set-rotating9:before {
+	content: "\e05a";
+}
+.fl-line-icon-set-round30:before {
+	content: "\e05b";
+}
+.fl-line-icon-set-round31:before {
+	content: "\e05c";
+}
+.fl-line-icon-set-rounded25:before {
+	content: "\e05d";
+}
+.fl-line-icon-set-rounded26:before {
+	content: "\e05e";
+}
+.fl-line-icon-set-royalty:before {
+	content: "\e05f";
+}
+.fl-line-icon-set-scissors14:before {
+	content: "\e060";
+}
+.fl-line-icon-set-shopping63:before {
+	content: "\e061";
+}
+.fl-line-icon-set-signal21:before {
+	content: "\e062";
+}
+.fl-line-icon-set-simple47:before {
+	content: "\e063";
+}
+.fl-line-icon-set-small139:before {
+	content: "\e064";
+}
+.fl-line-icon-set-snowflake3:before {
+	content: "\e065";
+}
+.fl-line-icon-set-speech54:before {
+	content: "\e066";
+}
+.fl-line-icon-set-spring11:before {
+	content: "\e067";
+}
+.fl-line-icon-set-square51:before {
+	content: "\e068";
+}
+.fl-line-icon-set-square52:before {
+	content: "\e069";
+}
+.fl-line-icon-set-square53:before {
+	content: "\e06a";
+}
+.fl-line-icon-set-square54:before {
+	content: "\e06b";
+}
+.fl-line-icon-set-square55:before {
+	content: "\e06c";
+}
+.fl-line-icon-set-square56:before {
+	content: "\e06d";
+}
+.fl-line-icon-set-square57:before {
+	content: "\e06e";
+}
+.fl-line-icon-set-stop20:before {
+	content: "\e06f";
+}
+.fl-line-icon-set-sun30:before {
+	content: "\e070";
+}
+.fl-line-icon-set-syncing:before {
+	content: "\e071";
+}
+.fl-line-icon-set-telephone63:before {
+	content: "\e072";
+}
+.fl-line-icon-set-trash27:before {
+	content: "\e073";
+}
+.fl-line-icon-set-triangle14:before {
+	content: "\e074";
+}
+.fl-line-icon-set-tshirt14:before {
+	content: "\e075";
+}
+.fl-line-icon-set-umbrella14:before {
+	content: "\e076";
+}
+.fl-line-icon-set-user73:before {
+	content: "\e077";
+}
+.fl-line-icon-set-wide6:before {
+	content: "\e078";
+}
+.fl-line-icon-set-world29:before {
+	content: "\e079";
+}

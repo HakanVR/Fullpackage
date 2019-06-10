@@ -1,0 +1,38 @@
+/*
+* @subsection   Typography
+*/
+
+h1, .heading-1 {
+    font-size: 2rem;
+}
+
+h2, .heading-2 {
+    font-size: 1.5rem;
+}
+
+h3, .heading-3 {
+    font-size: 1.17rem;
+    line-height: $indent-base;
+}
+
+h4, .heading-4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+h5, .heading-5 {
+    font-size: .83rem;
+}
+
+h6, .heading-6 {
+    font-size: .67rem;
+}
+
+@for $i from 1 through 6{
+  h#{$i},
+  .heading-#{$i}{
+    font-family: $extra-font-family;
+    color: $secondary-1;
+    margin-bottom: 0.5em;
+  }
+}

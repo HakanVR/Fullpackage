@@ -1,0 +1,61 @@
+.page-messages{
+    margin-bottom: $indent-base;
+}
+.messages{
+    position: fixed;
+    top: 70px;
+    right: 5%;
+    max-width: 90%;
+    z-index: 2;
+
+    @media (min-width: $screen-sm-min){
+        top: 55px;
+        max-width: 100%;
+    }
+}
+
+.message{
+    padding: 0.8rem 1rem 1.4rem 1rem;
+    margin-bottom: $indent-small;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+
+    >div:after{
+        content: 'Tap to close';
+        position: absolute;
+        bottom: 7px;
+        right: 0;
+        left: 0;
+        font-size: 10px;
+        line-height: 1;
+        color: $secondary-1;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+.message-info,
+.message-notice,
+.message.notice,
+.message.info{
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.message-warning{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.message-error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.message-success{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}

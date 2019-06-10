@@ -1,0 +1,69 @@
+//
+//  Related product
+//  ---------------------------------------------
+
+.block.related {
+  overflow: hidden;
+  margin-bottom: 60px;
+  .block-actions button.action.select {
+    color: $primary;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .block-title.title {
+    text-align: center;
+    strong {
+      font-size: 30px;
+    }
+  }
+  .block-actions {
+    text-align: center;
+  }
+
+}
+
+.products-grid.products-related {
+  margin: 2rem 0 0;
+  padding: 0;
+
+  .product-items {
+    margin: 0;
+    padding: 0;
+  }
+  .product-item {
+    @include flex-basis(100%);
+    padding: 0 0 50px;
+    margin: 0 0 -50px;
+    border-bottom: 0;
+  }
+  .product-item-inner {
+    float: none;
+    display: block;
+    .label {
+      padding: 0;
+      line-height: normal;
+      letter-spacing: 0;
+    }
+  }
+  .checkbox.related {
+    margin: 0 5px 0 0;
+    height: auto;
+  }
+
+  .owl-controls {
+    width: 100%;
+    position: static;
+    .owl-buttons > div {
+      font-size: 0;
+      position: absolute;
+      top: 50%;
+    }
+    .owl-prev {
+      left: 0;
+    }
+    .owl-next {
+      right: 0;
+    }
+  }
+}

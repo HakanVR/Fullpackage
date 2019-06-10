@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+/* 
+ *  Featured Product by TemplateMonster 2016
+ *  v1.0.0
+ */
+/* 
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+/* display none until init */
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y; }
+
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px); }
+
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out; }
+
+.owl-carousel .owl-item {
+  float: left; }
+
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+  cursor: pointer; }
+
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; }
+
+/* 
+ *  Core Owl Carousel CSS File
+ */
+.owl-carousel .owl-controls .owl-nav .owl-prev,
+.owl-carousel .owl-controls .owl-nav .owl-next,
+.owl-carousel .owl-controls .owl-dot {
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/***/
+/* fix */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0); }
+
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+/* 
+ *  Featured Product by TemplateMonster 2016
+ *  v1.0.0
+ */
+/* Main Styles */
+.block.widget.featured .products-grid .product-items .product-item-photo {
+  display: block;
+  text-align: center; }
+.block.widget.featured .block-content.custom-columns .products-grid {
+  margin-left: -30px; }
+  .block.widget.featured .block-content.custom-columns .products-grid .product-item {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 0 0 30px; }
+
+.block.featured .block-content .products-grid .owl-carousel {
+  margin: 0 0 0 -30px; }
+  .block.featured .block-content .products-grid .owl-carousel .owl-wrapper-outer {
+    padding-top: 15px;
+    padding-right: 15px; }
+    .block.featured .block-content .products-grid .owl-carousel .owl-wrapper-outer .product-item {
+      padding-left: 30px; }
+
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+/* 
+ * 	Featured Product by TemplateMonster 2016
+ *	v1.0.0
+ */
+/* 
+ *  Featured Product by TemplateMonster 2016
+ *  v1.0.0
+ */
+/* Main Styles */
+.block.widget.featured .products-list .product-items .product-label {
+  left: 10px;
+  right: auto; }
+.block.widget.featured .custom-columns .products-list .product-item {
+  float: left; }
+
+.block.featured .block-content .products-list .owl-carousel .product-item-info,
+.block.featured .custom-columns .products-list .product-items .product-item-info {
+  display: block; }
+  .block.featured .block-content .products-list .owl-carousel .product-item-info .product-item-photo,
+  .block.featured .custom-columns .products-list .product-items .product-item-info .product-item-photo {
+    display: block;
+    float: left;
+    width: 38%; }
+
+/* Main Styles */
+.block.widget.featured .product-item {
+  position: relative;
+  max-width: 100%; }
+  .block.widget.featured .product-item .product-label {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 99;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #ff0000;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 700; }
+
+.block.widget.featured .products-grid .owl-carousel .owl-item .product-item {
+  width: 100%; }
+
+.block.featured {
+  float: none; }
+  .block.featured .block-content .owl-carousel .owl-controls {
+    position: absolute;
+    top: -50px;
+    right: 0; }
+    .block.featured .block-content .owl-carousel .owl-controls .owl-prev {
+      display: inline-block; }
+      .block.featured .block-content .owl-carousel .owl-controls .owl-prev:before {
+        display: inline-block;
+        font-family: "FontAwesome";
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        content: ""; }
+    .block.featured .block-content .owl-carousel .owl-controls .owl-next {
+      display: inline-block; }
+      .block.featured .block-content .owl-carousel .owl-controls .owl-next:before {
+        display: inline-block;
+        font-family: "FontAwesome";
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0, 0);
+        content: ""; }
+    .block.featured .block-content .owl-carousel .owl-controls .owl-prev,
+    .block.featured .block-content .owl-carousel .owl-controls .owl-next {
+      padding: 0 7px;
+      cursor: pointer; }
+      .block.featured .block-content .owl-carousel .owl-controls .owl-prev:before,
+      .block.featured .block-content .owl-carousel .owl-controls .owl-next:before {
+        font-size: 36px;
+        color: #999999;
+        -moz-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        -webkit-transition: 0.3s ease;
+        transition: 0.3s ease; }
+      .block.featured .block-content .owl-carousel .owl-controls .owl-prev:hover:before,
+      .block.featured .block-content .owl-carousel .owl-controls .owl-next:hover:before {
+        color: #1979c3; }
+
+@media (min-width: 767px) {
+  .page-header .header.panel,
+  .header.content,
+  .footer.content,
+  .page-wrapper > .widget,
+  .page-wrapper > .page-bottom,
+  .block.category.event,
+  .top-container,
+  .page-main {
+    width: 100%; } }
+
+/*# sourceMappingURL=module.css.map */

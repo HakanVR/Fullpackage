@@ -1,0 +1,316 @@
+//
+//  Grid
+//  ---------------------------------------------
+
+.products-grid {
+  border: 3px solid $theme-line-1;
+  .product-items {
+    @include make-flex();
+    @include make-row();
+    @include flex-wrap(wrap);
+    @media (min-width: $screen-xl-min) {
+      @include make-row($gutter-width-xl);
+    }
+  }
+  .product-item {
+    @include make-col();
+    @include flex-basis(100%);
+    @media (min-width: $screen-xl-min) {
+      @include make-col($gutter-width-xl);
+    }
+  }
+  .product-item-details {
+    @include clearfix;
+  }
+  //Image
+  .product-image-photo {
+    text-align: center;
+    display: block;
+    margin-bottom: $indent-small;
+  }
+  .product-item-info {
+    position: relative;
+    padding: 15px 0;
+    @media (max-width: 479px) {
+      padding: 15px;
+      border-bottom: 1px solid $theme-line-1;
+    }
+  }
+  @media (max-width: $screen-md-min - 1) {
+    .owl-item {
+      .product-item-info {
+        padding: 15px;
+        border: 0;
+      }
+    }
+  }
+  .product-item-name {
+    padding-right: 40px;
+    margin-bottom: 10px;
+
+    a {
+      font-size: 16px;
+      color: $link-regular;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  //Reviews
+  .reviews-actions {
+    .action.add {
+      display: none;
+    }
+    a {
+      color: $primary;
+      &:hover {
+        color: $link-regular;
+      }
+    }
+  }
+  .rating-summary {
+    display: block;
+    .label {
+      display: none;
+
+    }
+  }
+
+  //Price
+  .price-box {
+    display: inline-block;
+    @media (min-width: $screen-xs-min) and (max-width: $screen-sm-min) {
+      .old-price {
+        display: block;
+      }
+
+    }
+  }
+  .price-from {
+    margin-bottom: 0;
+  }
+
+  .price-to {
+    margin-bottom: 0;
+  }
+
+  //Actions
+  .product-item-inner {
+    display: inline-block;
+    float: right;
+    .actions-primary {
+      margin: 0;
+      .primary.disabled {
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          left: -2px;
+          bottom: -12px;
+          width: 100%;
+          height: 10px;
+          border: 1px solid $primary;
+          border-radius: 3px;
+          background-image: repeating-linear-gradient(
+                          -45deg,
+                          $primary,
+                          $primary 11px,
+                          $secondary-2 10px,
+                          $secondary-2 20px /* determines size */
+          );
+          background-size: 28px 28px;
+          animation: move .5s linear infinite;
+        }
+
+        @keyframes move {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: 28px 0;
+          }
+        }
+        &:before {
+          opacity: 0.7;
+        }
+      }
+    }
+    .stock.unavailable {
+      font-size: 13px;
+      padding-top: 15px;
+    }
+  }
+  .product-item-actions {
+    margin: -5px 0 0;
+    .primary {
+      background: none;
+      padding: 0;
+      color: $secondary-1;
+      border: 0;
+      font-weight: 400;
+      span {
+        display: none;
+      }
+      &:before {
+        font-size: 38px;
+      }
+      &:hover {
+        color: $primary;
+        background: none;
+
+      }
+    }
+  }
+  .actions-secondary {
+    display: inline-block;
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    .action {
+      padding: 0;
+      background: none;
+      color: $secondary-2;
+      display: block;
+      margin-bottom: 17px;
+      border: 0;
+      &:hover {
+        color: $secondary-1;
+      }
+    }
+  }
+  .label-product {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .products-grid {
+    .product-items {
+    }
+    .product-item {
+      @include flex-basis(50%);
+      max-width: 50%;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .products-grid {
+    .product-item {
+      @include flex-basis(25%);
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .products-grid {
+    .product-items {
+      margin: 0;
+    }
+    .product-item {
+      padding: 0;
+      border-right: 1px solid $theme-line-1;
+      border-bottom: 1px solid $theme-line-1;
+      margin-bottom: -1px;
+    }
+    .product-item-info {
+      padding: 15px;
+      @media (min-width: $screen-sm-min) {
+        padding: 22px 29px 29px;
+      }
+      &:hover {
+        .price {
+          color: $primary;
+          transition: all 0.2s ease 0s;
+        }
+        .product-item-actions .actions-primary .action.primary {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .product-item-actions {
+    @include make-flex();
+    margin: 0 -$indent-small/4;
+    > div {
+      margin: 0 $indent-small/4 $indent-small/4;
+    }
+  }
+}
+
+.widget {
+  margin-bottom: 75px;
+  .block-title {
+    text-align: center;
+    margin-bottom: 43px;
+    strong {
+      font-size: 30px;
+      font-weight: 900;
+      margin: 0;
+      span {
+        font-weight: normal;
+      }
+    }
+
+  }
+  @media (max-width: $screen-sm-min) {
+    margin-bottom: 35px;
+    .block-title {
+      margin-bottom: 35px;
+    }
+  }
+}
+.block-new-products {
+  margin-bottom: 81px;
+  @media (max-width: $screen-sm-min) {
+    margin-bottom: 35px;
+  }
+}
+@media (min-width: $screen-xs-min) and (max-width: $screen-lg-min) {
+  .owl-item .price-box .old-price {
+    display: block;
+  }
+}
+
+.block-new-products,
+.crosssell {
+  .products-grid {
+    .product-items {
+      margin: 0;
+    }
+    .product-item {
+      @include flex-basis(100%);
+      border-bottom: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 120%;
+        border-right: 1px solid $theme-line-1;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  .owl-controls {
+    width: 100%;
+    position: static;
+    .owl-buttons > div {
+      font-size: 0;
+      position: absolute;
+      top: 50%;
+    }
+    .owl-prev {
+      left: 0;
+    }
+    .owl-next {
+      right: 0;
+    }
+  }
+}

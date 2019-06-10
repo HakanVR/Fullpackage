@@ -1,0 +1,41 @@
+.form-login {
+  .actions-toolbar {
+    flex-direction: row-reverse;
+  }
+}
+
+.form-create-account,
+.form-edit-account,
+.form-address-edit {
+  .fieldset {
+    margin-bottom: $indent-base;
+  }
+  .actions-toolbar {
+    flex-direction: row-reverse;
+  }
+}
+
+//
+//  Account main
+//  _____________________________________________
+
+body.account {
+  //Block styling
+  .block-title {
+    position: relative;
+    .action {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  //Box styling
+  .box {
+    address {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+
+

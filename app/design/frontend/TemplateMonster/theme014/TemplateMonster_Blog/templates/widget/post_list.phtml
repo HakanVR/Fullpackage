@@ -1,0 +1,70 @@
+<?php
+$columnNumber = 3;
+
+$dateFormat = $this->getDateFormat();
+?>
+
+<?php if ($posts = $this->getPosts()) : ?>
+    <div class="bg_blog_widget">
+        <div class="block widget blog-posts container">
+            <div class="block-title">
+                <strong><?php echo __('Our Blog') ?></strong>
+            </div>
+            <div class="block-content">
+                <div class="post-items">
+                    <?php foreach ($posts as $post): ?>
+                        <div class="post-item">
+                            <div class="item-wrapper">
+                                <!-- Image -->
+                                <?php if ($image = $post->getImage()): ?>
+                                    <div class="post-image">
+                                        <a href="<?php echo $this->getPostUrl($post); ?>"><img
+                                                src="<?php echo $image ?>"/></a>
+                                    </div>
+                                <?php endif; ?>
+
+                                <!-- Title -->
+                                <div class="post-title">
+                                    <h3>
+                                        <a href="<?php echo $this->getPostUrl($post); ?>"><?php echo $post->getTitle(); ?></a>
+                                    </h3>
+                                </div>
+                                <!-- Metadata -->
+                                <div class="post-data">
+                                    <?php if ($author = $post->getAuthor()): ?>
+                                        <span class="post-author">
+                                    <span class="label"><?php echo __('by '); ?></span>
+                                    <span class="author"><?php echo $author; ?></span> 
+                                </span>
+                                    <?php endif; ?>
+                                    <span class="create-date">
+
+                                <time><?php echo date($dateFormat, strtotime($post->getCreationTime())); ?></time>
+                            </span>
+                                    <?php if ($post->getCommentsEnabled()) : ?>
+                                        <span class="post-comments">
+                                    <a href="<?php echo $this->getPostUrl($post); ?>#post-comments"> 
+                                        <span class="count">
+                                            <?php echo $post->getApprovedComments()->count(); ?><?php echo __('comment(s) '); ?>
+                                        </span>
+                                    </a>
+                                </span>
+                                    <?php endif; ?>
+                                </div>
+                                <!-- Short Description -->
+                                <div class="post-short-content">
+                                    <?php echo $block->filterContent($post->getShortContent()); ?>
+                                </div>
+                                <a href="<?php echo $this->getPostUrl($post); ?>" class="post-link">
+                                    <?php /* @escapeNotVerified */
+                                    echo __('Read more'); ?>
+                                </a>
+
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

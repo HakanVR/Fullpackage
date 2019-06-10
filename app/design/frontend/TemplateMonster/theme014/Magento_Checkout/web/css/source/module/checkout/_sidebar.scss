@@ -1,0 +1,98 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+$checkout-sidebar__margin: 10px;
+$checkout-sidebar__border: 1px solid lighten($default, 50%);
+
+//
+//  Desktop
+//  _____________________________________________
+
+.opc-sidebar {
+  .opc-block-summary span.title {
+    font-family: $extra-font-family;
+    font-size: 30px;
+    line-height: 1;
+    color: $primary;
+    margin-bottom: 25px;
+    display: block;
+    @media (max-width: $screen-md-min) {
+      font-size: 24px;
+    }
+  }
+  .mark {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $link-regular;
+    padding: 0 0 10px;
+  }
+  .amount {
+    padding: 0 0 10px;
+  }
+  .grand .price {
+    font-size: 30px;
+    @media (max-width: $screen-md-min) {
+      font-size: 16px;
+    }
+
+  }
+  .table-totals {
+    border-bottom: 1px solid $theme-line-1;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+}
+
+.block.items-in-cart {
+  margin: 0;
+  .product-item {
+    @include clearfix;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .product-image-container {
+      float: left;
+      margin: 0 $indent-small $indent-small 0;
+      @media (max-width: $screen-md-min) {
+        width: 70px !important;
+        height: auto !important;
+      }
+    }
+  }
+  > .title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $link-regular;
+    margin-bottom: 50px;
+  }
+  .product-item-details {
+    overflow: hidden;
+  }
+  .product-item-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $link-regular;
+  }
+}
+
+.opc-block-shipping-information {
+  .ship-to {
+    border-bottom: 1px solid $theme-line-1;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+  }
+  .shipping-information-title {
+    font-family: $default-font-family;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
